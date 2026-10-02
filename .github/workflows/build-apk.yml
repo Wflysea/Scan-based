@@ -51,11 +51,12 @@ jobs:
 
       # 4) Android SDK + 自动接受 licenses + 设置 ANDROID_HOME
       #    flet 会复用此 SDK；若项目 gradle 指定了特定 NDK 版本，会自行下载。
-      #    显式列出所需包，避免依赖 Gradle 临时下载（v3 默认装已废弃的 'tools' 会失败）。
+      #    显式列出所需包（注意包名格式：platforms;android-XX，带 s）。
+      #    同时装 34 与 35 两个平台及对应 build-tools，覆盖不同 flet 版本的 compileSdk 需求。
       - name: Set up Android SDK
         uses: android-actions/setup-android@v4
         with:
-          packages: "build-tools;34.0.0 platform-tools platform;android-34"
+          packages: "platform-tools platforms;android-34 platforms;android-35 build-tools;34.0.0 build-tools;35.0.0"
 
       # 5) 缓存 pip，加速重复构建
       - name: Cache pip
