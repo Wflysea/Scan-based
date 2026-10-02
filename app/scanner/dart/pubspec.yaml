@@ -1,0 +1,20 @@
+name: barcode_scanner_control
+description: Flet custom control that wraps the mobile_scanner Flutter plugin.
+version: 1.0.0
+publish_to: "none"
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.16.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flet:
+    git:
+      url: https://github.com/flet-dev/flet.git
+      ref: main
+      path: packages/flet
+  mobile_scanner: ^5.0.0
+
+flutter:
+  uses-material-design: true

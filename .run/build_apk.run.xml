@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration name="Flet Build APK" type="PythonConfigurationType" factoryName="Python" module="inventory_app">
+    <option name="MODULE_MODE" value="true" />
+    <option name="MODULE_NAME" value="flet" />
+    <option name="PARAMETERS" value="build apk" />
+    <option name="WORKING_DIR" value="$PROJECT_DIR$" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <option name="SHOW_COMMAND_LINE" value="false" />
+    <option name="EMULATE_TERMINAL" value="true" />
+  </configuration>
+</component>

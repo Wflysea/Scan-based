@@ -1,0 +1,8 @@
+# 用于 `flet build apk` / `flet build aab` 的安卓构建依赖清单。
+# 注意：pyzbar 与 Pillow 依赖系统原生库（libzbar / libjpeg 等），
+# 没有安卓可用的 wheel，且扫码页中均为「懒加载 + 失败兜底」，
+# 安卓端走 mobile_scanner 原生控件，故此处排除，避免构建失败。
+flet>=0.27.0
+flet-camera>=0.1.0
+flet-permission-handler>=0.1.0
+openpyxl>=3.1.0

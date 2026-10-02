@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# 构建产物
+build/
+dist/
+*.egg-info/
+
+# 本地数据库（运行时生成）
+app/inventory.db
+
+# 测试缓存
+.pytest_cache/
+
+# PyCharm（按需保留可去掉此行以提交 IDE 配置）
+.idea/

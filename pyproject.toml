@@ -1,0 +1,39 @@
+[project]
+name = "inventory-scanner"
+version = "1.0.0"
+description = "扫码出入库管理 (Flet + SQLite)"
+requires-python = ">=3.10"
+dependencies = [
+    "flet>=0.27.0",
+    "flet-camera>=0.1.0",
+    "flet-permission-handler>=0.1.0",
+    "pyzbar>=0.1.10",
+    "Pillow>=10.0.0",
+    "openpyxl>=3.1.0",
+]
+
+[tool.flet]
+product = "扫码出入库"
+artifact = "inventory_scanner"
+org = "com.example"
+bundle_id = "com.example.inventoryscanner"
+build_number = 1
+# 跨平台权限包：camera 会自动向 AndroidManifest 注入 CAMERA 权限
+permissions = ["camera"]
+# 自定义控件（mobile_scanner 原生扫码）路径；若你的 Flet 版本支持 controls，取消注释：
+# controls = ["app/scanner/dart"]
+
+[tool.flet.android.permission]
+"android.permission.CAMERA" = true
+"android.permission.INTERNET" = true
+
+[tool.flet.android.feature]
+"android.hardware.camera" = true
+"android.hardware.camera.autofocus" = true
+
+# 正式发布签名（可选）：填入你的 keystore 后取消注释
+# [tool.flet.android.signing]
+# key_store = "keystore/release.jks"
+# key_alias = "release"
+# key_password = "your_password"
+# store_password = "your_store_password"
