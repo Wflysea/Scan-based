@@ -21,3 +21,5 @@ app/inventory.db
 
 # PyCharm（按需保留可去掉此行以提交 IDE 配置）
 .idea/
+# 本地排错用的 Actions 运行日志（勿提交）
+runlog*.txt
