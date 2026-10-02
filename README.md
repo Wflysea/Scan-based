@@ -54,10 +54,9 @@ openpyxl>=3.1.0       # 导出 xlsx 备份
 - macOS：`brew install zbar`
 - Linux（Debian/Ubuntu）：`sudo apt-get install libzbar0`
 
-> ⚠️ **构建安卓 APK 请用 `requirements-android.txt`**，而非 `requirements.txt`。
-> `pyzbar`（C 扩展，依赖系统 libzbar）和 `Pillow`（依赖系统 libjpeg 等）**没有安卓可用的 wheel**，
-> `flet build apk` 会把 `requirements.txt` 里的所有包打进 APK，遇到无安卓 wheel 的包将直接构建失败。
-> 扫码页中二者均为「懒加载 + 失败兜底」，安卓端走 `mobile_scanner` 原生控件，故排除后不影响功能。
+> ⚠️ **关键认知：`flet build apk` 解析的依赖来自 `pyproject.toml` 的 `[project.dependencies]`，不是 `requirements.txt` / `requirements-android.txt`**。
+> 因此安卓不需要、且**没有安卓 wheel** 的包（例如 `pyzbar`：源上最高仅 `0.1.9`，且依赖系统 libzbar）必须**从 `pyproject.toml` 的依赖里移除**，否则打包直接报 `No matching distribution found` 失败。
+> `Pillow` 在 Flet 预编译源有安卓 wheel，可保留。`pyzbar` 仅桌面端扫码使用（桌面开发由 `requirements.txt` 安装）；扫码页中它是「懒加载 + 失败兜底」，安卓端走 `mobile_scanner` 原生控件或手动输入，移除 `pyproject.toml` 中的 `pyzbar` 不影响功能。
 
 ## 本地运行（桌面开发调试）
 
@@ -162,7 +161,7 @@ flet build apk            # 输出 build/apk/app-release.apk
 **工作流做的事**
 1. 装 Java 17（Temurin）、Python 3.12、Flutter stable。
 2. `android-actions/setup-android` 装 Android SDK 并自动接受 license、设置 `ANDROID_HOME`。
-3. 装 `requirements-android.txt`（`flet` / `flet-camera` / `flet-permission-handler` / `openpyxl`）。
+3. （可选）`pip install -r requirements-android.txt` 仅为 CI 的 Python 环境安装包；**`flet build apk` 真正打包的依赖来自 `pyproject.toml`**，已从中排除无安卓 wheel 的 `pyzbar`。
 4. `flet build apk --verbose` → 产物 `build/apk/`。
 5. 上传 Artifact；Release 时再 `flet build aab` 并附加到 Release。
 

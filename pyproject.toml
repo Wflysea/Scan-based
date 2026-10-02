@@ -7,7 +7,8 @@ dependencies = [
     "flet>=0.27.0",
     "flet-camera>=0.1.0",
     "flet-permission-handler>=0.1.0",
-    "pyzbar>=0.1.10",
+    # 注意：pyzbar 在安卓 APK 内无可用 wheel（最高仅 0.1.9 且依赖系统 libzbar），
+    # 不能放进打包依赖；安卓扫码走原生 mobile_scanner 控件，桌面端 pyzbar 仍由 requirements.txt 安装。
     "Pillow>=10.0.0",
     "openpyxl>=3.1.0",
 ]
