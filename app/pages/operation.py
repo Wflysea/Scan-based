@@ -2,6 +2,8 @@
 
 记录字段：商品名称、编码、数量、操作类型(入库/出库)、操作人、仓库/库位、备注。
 保存时自动增减库存，并在低于安全库存时给出预警。
+
+Flet 1.0 适配：弹层用 page.show_dialog / page.pop_dialog（替代 0.86 的 page.open/close）。
 """
 import flet as ft
 
@@ -74,7 +76,7 @@ def open_operation(app, code=None, default_type="IN"):
             c, n, t, q, operator.value.strip(), location.value.strip(),
             note.value.strip(), safety_stock=None if product else sf_val, unit="个",
         )
-        page.close(sheet)
+        page.pop_dialog()
         app.refresh()
         msg = f"{'入库' if t == 'IN' else '出库'}成功：{pname} 当前库存 {new_qty}"
         color = IN_COLOR if t == "IN" else OUT_COLOR
@@ -98,7 +100,7 @@ def open_operation(app, code=None, default_type="IN"):
                             ),
                             ft.OutlinedButton(
                                 "取消", height=BTN_HEIGHT,
-                                on_click=lambda e: page.close(sheet), expand=True,
+                                on_click=lambda e: page.pop_dialog(), expand=True,
                             ),
                         ],
                         spacing=10,
@@ -109,4 +111,4 @@ def open_operation(app, code=None, default_type="IN"):
             ),
         ),
     )
-    page.open(sheet)
+    page.show_dialog(sheet)

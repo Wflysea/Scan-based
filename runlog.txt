@@ -1,0 +1,1395 @@
+﻿2026-10-02T14:37:22.7978072Z Current runner version: '2.337.0'
+2026-10-02T14:37:22.8005573Z ##[group]Runner Image Provisioner
+2026-10-02T14:37:22.8006476Z Hosted Compute Agent
+2026-10-02T14:37:22.8007190Z Version: 20260901.588
+2026-10-02T14:37:22.8007926Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-02T14:37:22.8008724Z Build Date: 2026-09-01T19:56:44Z
+2026-10-02T14:37:22.8009466Z Worker ID: {c1ea6f3a-0596-40e5-a5e8-1f00af5a86fb}
+2026-10-02T14:37:22.8010176Z Azure Region: eastus
+2026-10-02T14:37:22.8011115Z ##[endgroup]
+2026-10-02T14:37:22.8012665Z ##[group]Operating System
+2026-10-02T14:37:22.8013410Z Ubuntu
+2026-10-02T14:37:22.8014075Z 24.04.5
+2026-10-02T14:37:22.8014590Z LTS
+2026-10-02T14:37:22.8015194Z ##[endgroup]
+2026-10-02T14:37:22.8015761Z ##[group]Runner Image
+2026-10-02T14:37:22.8016408Z Image: ubuntu-24.04
+2026-10-02T14:37:22.8017041Z Version: 20260927.320.1
+2026-10-02T14:37:22.8018408Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-02T14:37:22.8020054Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-02T14:37:22.8021539Z ##[endgroup]
+2026-10-02T14:37:22.8022760Z ##[group]GITHUB_TOKEN Permissions
+2026-10-02T14:37:22.8024898Z Contents: write
+2026-10-02T14:37:22.8025560Z Metadata: read
+2026-10-02T14:37:22.8026217Z ##[endgroup]
+2026-10-02T14:37:22.8028552Z Secret source: Actions
+2026-10-02T14:37:22.8029638Z Cache mode: write
+2026-10-02T14:37:22.8030387Z Prepare workflow directory
+2026-10-02T14:37:22.8382887Z Prepare all required actions
+2026-10-02T14:37:22.8434584Z Getting action download info
+2026-10-02T14:37:23.1899570Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-02T14:37:23.2853803Z Download action repository 'actions/setup-java@v6' (SHA:de7274f081f381c8f8158605e0321c36c376e2e6)
+2026-10-02T14:37:23.5923930Z Download action repository 'actions/setup-python@v7' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-02T14:37:23.6760204Z Download action repository 'actions/cache@v6' (SHA:55cc8345863c7cc4c66a329aec7e433d2d1c52a9)
+2026-10-02T14:37:23.7899289Z Download action repository 'android-actions/setup-android@v4' (SHA:be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd)
+2026-10-02T14:37:23.9021922Z Download action repository 'actions/upload-artifact@v7' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-10-02T14:37:23.9775355Z Download action repository 'softprops/action-gh-release@v3' (SHA:efb35369e0ad2afab669f228072c1b0d510eae64)
+2026-10-02T14:37:24.3126752Z Complete job name: Build APK (and AAB on release/tag)
+2026-10-02T14:37:24.4227184Z ##[group]Run actions/checkout@v7
+2026-10-02T14:37:24.4228620Z with:
+2026-10-02T14:37:24.4229440Z   repository: Wflysea/Scan-based
+2026-10-02T14:37:24.4239193Z   token: ***
+2026-10-02T14:37:24.4239988Z   ssh-strict: true
+2026-10-02T14:37:24.4240928Z   ssh-user: git
+2026-10-02T14:37:24.4241761Z   persist-credentials: true
+2026-10-02T14:37:24.4242655Z   clean: true
+2026-10-02T14:37:24.4243486Z   sparse-checkout-cone-mode: true
+2026-10-02T14:37:24.4244504Z   fetch-depth: 1
+2026-10-02T14:37:24.4245310Z   fetch-tags: false
+2026-10-02T14:37:24.4246135Z   show-progress: true
+2026-10-02T14:37:24.4246968Z   lfs: false
+2026-10-02T14:37:24.4247740Z   submodules: false
+2026-10-02T14:37:24.4248579Z   set-safe-directory: true
+2026-10-02T14:37:24.4249542Z   allow-unsafe-pr-checkout: false
+2026-10-02T14:37:24.4251263Z ##[endgroup]
+2026-10-02T14:37:24.5384729Z Syncing repository: Wflysea/Scan-based
+2026-10-02T14:37:24.5388227Z ##[group]Getting Git version info
+2026-10-02T14:37:24.5390581Z Working directory is '/home/runner/work/Scan-based/Scan-based'
+2026-10-02T14:37:24.5393701Z [command]/usr/bin/git version
+2026-10-02T14:37:24.5443243Z git version 2.55.0
+2026-10-02T14:37:24.5474039Z ##[endgroup]
+2026-10-02T14:37:24.5488445Z Temporarily overriding HOME='/home/runner/work/_temp/dd32f4b4-82ed-4e73-ab83-23ba19a7f316' before making global git config changes
+2026-10-02T14:37:24.5491688Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T14:37:24.5495907Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Scan-based/Scan-based
+2026-10-02T14:37:24.5550365Z Deleting the contents of '/home/runner/work/Scan-based/Scan-based'
+2026-10-02T14:37:24.5554289Z ##[group]Determining repository object format
+2026-10-02T14:37:24.5557030Z ##[endgroup]
+2026-10-02T14:37:24.5558498Z ##[group]Initializing the repository
+2026-10-02T14:37:24.5562695Z [command]/usr/bin/git init /home/runner/work/Scan-based/Scan-based
+2026-10-02T14:37:24.5684890Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-02T14:37:24.5688949Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-02T14:37:24.5693134Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-02T14:37:24.5695272Z hint: call:
+2026-10-02T14:37:24.5696791Z hint:
+2026-10-02T14:37:24.5698698Z hint: 	git config --global init.defaultBranch <name>
+2026-10-02T14:37:24.5701064Z hint:
+2026-10-02T14:37:24.5703182Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-02T14:37:24.5705863Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-02T14:37:24.5708753Z hint:
+2026-10-02T14:37:24.5710254Z hint: 	git branch -m <name>
+2026-10-02T14:37:24.5712358Z hint:
+2026-10-02T14:37:24.5714627Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-02T14:37:24.5718878Z Initialized empty Git repository in /home/runner/work/Scan-based/Scan-based/.git/
+2026-10-02T14:37:24.5725720Z [command]/usr/bin/git remote add origin https://github.com/Wflysea/Scan-based
+2026-10-02T14:37:24.5767836Z ##[endgroup]
+2026-10-02T14:37:24.5770451Z ##[group]Disabling automatic garbage collection
+2026-10-02T14:37:24.5773074Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-02T14:37:24.5815534Z ##[endgroup]
+2026-10-02T14:37:24.5817819Z ##[group]Setting up auth
+2026-10-02T14:37:24.5819510Z Removing SSH command configuration
+2026-10-02T14:37:24.5823081Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T14:37:24.5875005Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T14:37:24.6264379Z Removing HTTP extra header
+2026-10-02T14:37:24.6271044Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T14:37:24.6315341Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T14:37:24.6545164Z Removing includeIf entries pointing to credentials config files
+2026-10-02T14:37:24.6549605Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T14:37:24.6590947Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T14:37:24.6839942Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-2331015c-2710-48a8-abc6-ebc24623d094.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-02T14:37:24.6886660Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Scan-based/Scan-based/.git.path /home/runner/work/_temp/git-credentials-2331015c-2710-48a8-abc6-ebc24623d094.config
+2026-10-02T14:37:24.6927914Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Scan-based/Scan-based/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-2331015c-2710-48a8-abc6-ebc24623d094.config
+2026-10-02T14:37:24.6972203Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-2331015c-2710-48a8-abc6-ebc24623d094.config
+2026-10-02T14:37:24.7016680Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-2331015c-2710-48a8-abc6-ebc24623d094.config
+2026-10-02T14:37:24.7053764Z ##[endgroup]
+2026-10-02T14:37:24.7056219Z ##[group]Fetching the repository
+2026-10-02T14:37:24.7064074Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +855ce4c1f60d700b0415339ba78bc90f2e0d04cc:refs/remotes/origin/main
+2026-10-02T14:37:24.9235307Z From https://github.com/Wflysea/Scan-based
+2026-10-02T14:37:24.9237023Z  * [new ref]         855ce4c1f60d700b0415339ba78bc90f2e0d04cc -> origin/main
+2026-10-02T14:37:24.9246279Z [command]/usr/bin/git branch --list --remote origin/main
+2026-10-02T14:37:24.9279623Z   origin/main
+2026-10-02T14:37:24.9290402Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-10-02T14:37:24.9322345Z 855ce4c1f60d700b0415339ba78bc90f2e0d04cc
+2026-10-02T14:37:24.9334685Z ##[endgroup]
+2026-10-02T14:37:24.9336819Z ##[group]Determining the checkout info
+2026-10-02T14:37:24.9339176Z ##[endgroup]
+2026-10-02T14:37:24.9340542Z [command]/usr/bin/git sparse-checkout disable
+2026-10-02T14:37:24.9399767Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-02T14:37:24.9450270Z ##[group]Checking out the ref
+2026-10-02T14:37:24.9455452Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-02T14:37:24.9545727Z Switched to a new branch 'main'
+2026-10-02T14:37:24.9550417Z branch 'main' set up to track 'origin/main'.
+2026-10-02T14:37:24.9559797Z ##[endgroup]
+2026-10-02T14:37:24.9615899Z [command]/usr/bin/git log -1 --format=%H
+2026-10-02T14:37:24.9651660Z 855ce4c1f60d700b0415339ba78bc90f2e0d04cc
+2026-10-02T14:37:25.0126295Z ##[group]Run actions/setup-java@v6
+2026-10-02T14:37:25.0127234Z with:
+2026-10-02T14:37:25.0127933Z   distribution: temurin
+2026-10-02T14:37:25.0128717Z   java-version: 17
+2026-10-02T14:37:25.0129459Z   java-package: jdk
+2026-10-02T14:37:25.0130204Z   check-latest: false
+2026-10-02T14:37:25.0131338Z   force-download: false
+2026-10-02T14:37:25.0132138Z   set-default: true
+2026-10-02T14:37:25.0132881Z   server-id: github
+2026-10-02T14:37:25.0133706Z   mvn-repositories-include-central: true
+2026-10-02T14:37:25.0134748Z   mvn-repositories-prioritize-central: true
+2026-10-02T14:37:25.0135747Z   overwrite-settings: true
+2026-10-02T14:37:25.0136595Z   cache-read-only: false
+2026-10-02T14:37:25.0137394Z   job-status: success
+2026-10-02T14:37:25.0145811Z   token: ***
+2026-10-02T14:37:25.0146577Z   show-download-progress: false
+2026-10-02T14:37:25.0147452Z   problem-matcher: true
+2026-10-02T14:37:25.0148226Z ##[endgroup]
+2026-10-02T14:37:25.0990286Z ##[group]Installed distributions
+2026-10-02T14:37:25.1173144Z Resolved Java 17.0.20+1 from tool-cache
+2026-10-02T14:37:25.1174929Z Setting Java 17.0.20+1 as the default
+2026-10-02T14:37:25.1182904Z 
+2026-10-02T14:37:25.1183568Z Java configuration:
+2026-10-02T14:37:25.1184965Z   Distribution: temurin
+2026-10-02T14:37:25.1186286Z   Version: 17.0.20+1
+2026-10-02T14:37:25.1188113Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:25.1189613Z 
+2026-10-02T14:37:25.1191317Z ##[endgroup]
+2026-10-02T14:37:25.1228139Z Creating settings.xml with server-id: github
+2026-10-02T14:37:25.1230193Z Creating toolchains.xml for JDK version 17 from temurin
+2026-10-02T14:37:25.1276015Z Writing to /home/runner/.m2/settings.xml
+2026-10-02T14:37:25.1278625Z Writing to /home/runner/.m2/toolchains.xml
+2026-10-02T14:37:25.1283571Z Configured MAVEN_ARGS to include -ntp to suppress Maven transfer progress logs. Set 'show-download-progress: true' to keep the download progress output.
+2026-10-02T14:37:25.1586703Z ##[group]Run actions/setup-python@v7
+2026-10-02T14:37:25.1587670Z with:
+2026-10-02T14:37:25.1588380Z   python-version: 3.12
+2026-10-02T14:37:25.1589168Z   check-latest: false
+2026-10-02T14:37:25.1603085Z   token: ***
+2026-10-02T14:37:25.1603980Z   update-environment: true
+2026-10-02T14:37:25.1605295Z   allow-prereleases: false
+2026-10-02T14:37:25.1606750Z   freethreaded: false
+2026-10-02T14:37:25.1615498Z env:
+2026-10-02T14:37:25.1617249Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:25.1619973Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:25.1622448Z   MAVEN_ARGS: -ntp
+2026-10-02T14:37:25.1623670Z ##[endgroup]
+2026-10-02T14:37:25.2934447Z ##[group]Installed versions
+2026-10-02T14:37:25.3018793Z Successfully set up CPython (3.12.14)
+2026-10-02T14:37:25.3021057Z ##[endgroup]
+2026-10-02T14:37:25.3931716Z ##[group]Run actions/cache@v6
+2026-10-02T14:37:25.3932640Z with:
+2026-10-02T14:37:25.3933328Z   path: ~/flutter
+2026-10-02T14:37:25.3934647Z   key: Linux-flet-flutter-420e3f82d1af2f23f097e91db4173a7699fcefe48b3c74249f0f342450880cf6
+2026-10-02T14:37:25.3936208Z   restore-keys: Linux-flet-flutter-
+2026-10-02T14:37:25.3937154Z   enableCrossOsArchive: false
+2026-10-02T14:37:25.3938024Z   fail-on-cache-miss: false
+2026-10-02T14:37:25.3938852Z   lookup-only: false
+2026-10-02T14:37:25.3939632Z   save-always: false
+2026-10-02T14:37:25.3940358Z env:
+2026-10-02T14:37:25.3941598Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:25.3943140Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:25.3944366Z   MAVEN_ARGS: -ntp
+2026-10-02T14:37:25.3945296Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:25.3946656Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+2026-10-02T14:37:25.3948063Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:25.3949309Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:25.3950547Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:25.3952238Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+2026-10-02T14:37:25.3953317Z ##[endgroup]
+2026-10-02T14:37:25.5981395Z Cache not found for input keys: Linux-flet-flutter-420e3f82d1af2f23f097e91db4173a7699fcefe48b3c74249f0f342450880cf6, Linux-flet-flutter-
+2026-10-02T14:37:25.6162943Z ##[group]Run android-actions/setup-android@v4
+2026-10-02T14:37:25.6163905Z with:
+2026-10-02T14:37:25.6164979Z   packages: platform-tools platforms;android-34 platforms;android-35 build-tools;34.0.0 build-tools;35.0.0
+2026-10-02T14:37:25.6166143Z   cmdline-tools-version: 15859902
+2026-10-02T14:37:25.6167025Z   accept-android-sdk-licenses: true
+2026-10-02T14:37:25.6167916Z   log-accepted-android-sdk-licenses: true
+2026-10-02T14:37:25.6168770Z env:
+2026-10-02T14:37:25.6169688Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:25.6171116Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:25.6172148Z   MAVEN_ARGS: -ntp
+2026-10-02T14:37:25.6173044Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:25.6174115Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+2026-10-02T14:37:25.6175220Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:25.6176279Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:25.6177293Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:25.6178331Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+2026-10-02T14:37:25.6179261Z ##[endgroup]
+2026-10-02T14:37:25.7113420Z Found preinstalled sdkmanager in /usr/local/lib/android/sdk/cmdline-tools/latest with following source.properties:
+2026-10-02T14:37:25.7115699Z Pkg.Revision=12.0
+2026-10-02T14:37:25.7116662Z Pkg.Path=cmdline-tools;12.0
+2026-10-02T14:37:25.7117665Z Pkg.Desc=Android SDK Command-line Tools
+2026-10-02T14:37:25.7118281Z 
+2026-10-02T14:37:25.7118752Z Wrong version in preinstalled sdkmanager
+2026-10-02T14:37:25.7120299Z Downloading commandline tools from https://dl.google.com/android/repository/commandlinetools-linux-15859902_latest.zip
+2026-10-02T14:37:26.5985794Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/367d8edf-b211-4261-b93f-ebbb53210260
+2026-10-02T14:37:27.4611382Z Accepting Android SDK licenses
+2026-10-02T14:37:27.4615068Z [command]/usr/local/lib/android/sdk/cmdline-tools/22.0/bin/sdkmanager --licenses
+2026-10-02T14:37:27.8750396Z WARNING: The SDK Manager CLI tool (sdkmanager) is deprecated. Use Android CLI instead.
+2026-10-02T14:37:27.8752214Z The 'android' binary can also be found in the cmdline-tools directory, and 'android sdk' is the replacement for 'sdkmanager'.
+2026-10-02T14:37:27.8753869Z To learn more about the Android CLI and how to use it, see the documentation (https://d.android.com/tools/agents/android-cli)
+2026-10-02T14:37:27.8754788Z 
+2026-10-02T14:37:29.9446198Z Loading local repository...                                                     
+2026-10-02T14:37:29.9447715Z [=========                              ] 25% Loading local repository...       
+2026-10-02T14:37:30.4849324Z [=========                              ] 25% Fetch remote repository...        
+2026-10-02T14:37:30.9772834Z [==========                             ] 26% Fetch remote repository...        
+2026-10-02T14:37:30.9794868Z [============                           ] 31% Fetch remote repository...        
+2026-10-02T14:37:31.0427158Z [============                           ] 32% Fetch remote repository...        
+2026-10-02T14:37:31.0442031Z [=============                          ] 33% Fetch remote repository...        
+2026-10-02T14:37:31.0734641Z [=============                          ] 35% Fetch remote repository...        
+2026-10-02T14:37:31.0736119Z [==============                         ] 36% Fetch remote repository...        
+2026-10-02T14:37:31.0964820Z [==============                         ] 37% Fetch remote repository...        
+2026-10-02T14:37:31.0968176Z [===============                        ] 38% Fetch remote repository...        
+2026-10-02T14:37:31.1155532Z [===============                        ] 39% Fetch remote repository...        
+2026-10-02T14:37:31.1182323Z [================                       ] 40% Fetch remote repository...        
+2026-10-02T14:37:31.1398275Z [================                       ] 41% Fetch remote repository...        
+2026-10-02T14:37:31.1399777Z [================                       ] 42% Fetch remote repository...        
+2026-10-02T14:37:31.1565069Z [=================                      ] 44% Fetch remote repository...        
+2026-10-02T14:37:31.1566453Z [=================                      ] 45% Fetch remote repository...        
+2026-10-02T14:37:31.1735260Z [==================                     ] 46% Fetch remote repository...        
+2026-10-02T14:37:31.1741385Z [==================                     ] 47% Fetch remote repository...        
+2026-10-02T14:37:31.2014510Z [===================                    ] 48% Fetch remote repository...        
+2026-10-02T14:37:31.2016495Z [===================                    ] 49% Fetch remote repository...        
+2026-10-02T14:37:31.2202806Z [====================                   ] 50% Fetch remote repository...        
+2026-10-02T14:37:31.2215569Z [====================                   ] 51% Fetch remote repository...        
+2026-10-02T14:37:31.2396900Z [====================                   ] 53% Fetch remote repository...        
+2026-10-02T14:37:31.2401525Z [=====================                  ] 54% Fetch remote repository...        
+2026-10-02T14:37:31.2594229Z [=====================                  ] 55% Fetch remote repository...        
+2026-10-02T14:37:31.2595517Z [======================                 ] 56% Fetch remote repository...        
+2026-10-02T14:37:31.2777165Z [======================                 ] 57% Fetch remote repository...        
+2026-10-02T14:37:31.2778730Z [=======================                ] 58% Fetch remote repository...        
+2026-10-02T14:37:31.2923856Z [=======================                ] 59% Fetch remote repository...        
+2026-10-02T14:37:31.2925215Z [========================               ] 60% Fetch remote repository...        
+2026-10-02T14:37:31.3183620Z [========================               ] 61% Fetch remote repository...        
+2026-10-02T14:37:31.3213454Z [=========================              ] 63% Fetch remote repository...        
+2026-10-02T14:37:31.3347376Z [=========================              ] 64% Fetch remote repository...        
+2026-10-02T14:37:31.3348683Z [=========================              ] 65% Fetch remote repository...        
+2026-10-02T14:37:31.3663645Z [==========================             ] 66% Fetch remote repository...        
+2026-10-02T14:37:31.3664832Z [==========================             ] 67% Fetch remote repository...        
+2026-10-02T14:37:31.3994959Z [===========================            ] 68% Fetch remote repository...        
+2026-10-02T14:37:31.4001897Z [===========================            ] 69% Fetch remote repository...        
+2026-10-02T14:37:31.5024923Z [============================           ] 70% Fetch remote repository...        
+2026-10-02T14:37:31.5027573Z [============================           ] 72% Fetch remote repository...        
+2026-10-02T14:37:31.5620065Z [=============================          ] 73% Fetch remote repository...        
+2026-10-02T14:37:31.5623837Z [=============================          ] 74% Fetch remote repository...        
+2026-10-02T14:37:31.5778471Z [=============================          ] 75% Fetch remote repository...        
+2026-10-02T14:37:31.5922020Z [=============================          ] 75% Computing updates...              
+2026-10-02T14:37:31.5927466Z [=======================================] 100% Computing updates...             
+2026-10-02T14:37:31.6375656Z 6 of 7 SDK package licenses not accepted.
+2026-10-02T14:37:31.6404149Z Review licenses that have not been accepted (y/N)? 
+2026-10-02T14:37:31.6435389Z 1/6: License android-googletv-license:
+2026-10-02T14:37:31.6436292Z ---------------------------------------
+2026-10-02T14:37:31.6463434Z Terms and Conditions
+2026-10-02T14:37:31.6464050Z 
+2026-10-02T14:37:31.6464801Z This is the Google TV Add-on for the Android Software Development Kit License Agreement.
+2026-10-02T14:37:31.6466037Z 
+2026-10-02T14:37:31.6466472Z 1. Introduction
+2026-10-02T14:37:31.6466898Z 
+2026-10-02T14:37:31.6469402Z 1.1 The Google TV Add-on for the Android Software Development Kit (referred to in this License Agreement as the "Google TV Add-on" and specifically including the Android system files, packaged APIs, and Google APIs add-ons) is licensed to you subject to the terms of this License Agreement. This License Agreement forms a legally binding contract between you and Google in relation to your use of the Google TV Add-on.
+2026-10-02T14:37:31.6476473Z 
+2026-10-02T14:37:31.6477621Z 1.2 "Google" means Google Inc., a Delaware corporation with principal place of business at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
+2026-10-02T14:37:31.6479405Z 
+2026-10-02T14:37:31.6479805Z 2. Accepting this License Agreement
+2026-10-02T14:37:31.6480346Z 
+2026-10-02T14:37:31.6481614Z 2.1 In order to use the Google TV Add-on, you must first agree to this License Agreement. You may not use the Google TV Add-on if you do not accept this License Agreement.
+2026-10-02T14:37:31.6482975Z 
+2026-10-02T14:37:31.6483390Z 2.2 You can accept this License Agreement by:
+2026-10-02T14:37:31.6483940Z 
+2026-10-02T14:37:31.6484649Z (A) clicking to accept or agree to this License Agreement, where this option is made available to you; or
+2026-10-02T14:37:31.6485526Z 
+2026-10-02T14:37:31.6486578Z (B) by actually using the Google TV Add-on. In this case, you agree that use of the Google TV Add-on constitutes acceptance of the License Agreement from that point onwards.
+2026-10-02T14:37:31.6487840Z 
+2026-10-02T14:37:31.6489588Z 2.3 You may not use the Google TV Add-on and may not accept the Licensing Agreement if you are a person barred from receiving the Google TV Add-on under the laws of the United States or other countries including the country in which you are resident or from which you use the Google TV Add-on.
+2026-10-02T14:37:31.6492026Z 
+2026-10-02T14:37:31.6494337Z 2.4 If you are agreeing to be bound by this License Agreement on behalf of your employer or other entity, you represent and warrant that you have full legal authority to bind your employer or such entity to this License Agreement. If you do not have the requisite authority, you may not accept the Licensing Agreement or use the Google TV Add-on on behalf of your employer or other entity.
+2026-10-02T14:37:31.6514309Z 
+2026-10-02T14:37:31.6518204Z 3. Google TV Add-on License from Google
+2026-10-02T14:37:31.6518600Z 
+2026-10-02T14:37:31.6532253Z 3.1 Subject to the terms of this License Agreement, Google grants you a limited, worldwide, royalty-free, non- assignable and non-exclusive license to use the Google TV Add-on solely to develop applications to run on the Google TV platform.
+2026-10-02T14:37:31.6533694Z 
+2026-10-02T14:37:31.6535912Z 3.2 You agree that Google or third parties own all legal right, title and interest in and to the Google TV Add-on, including any Intellectual Property Rights that subsist in the Google TV Add-on. "Intellectual Property Rights" means any and all rights under patent law, copyright law, trade secret law, trademark law, and any and all other proprietary rights. Google reserves all rights not expressly granted to you.
+2026-10-02T14:37:31.6538291Z 
+2026-10-02T14:37:31.6542048Z 3.3 Except to the extent required by applicable third party licenses, you may not copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the Google TV Add-on or any part of the Google TV Add-on. Except to the extent required by applicable third party licenses, you may not load any part of the Google TV Add-on onto a mobile handset, television, or any other hardware device except a personal computer, combine any part of the Google TV Add-on with other software, or distribute any software or device incorporating a part of the Google TV Add-on.
+2026-10-02T14:37:31.6545613Z 
+2026-10-02T14:37:31.6547095Z 3.4 Use, reproduction and distribution of components of the Google TV Add-on licensed under an open source software license are governed solely by the terms of that open source software license and not this License Agreement.
+2026-10-02T14:37:31.6548472Z 
+2026-10-02T14:37:31.6551591Z 3.5 You agree that the form and nature of the Google TV Add-on that Google provides may change without prior notice to you and that future versions of the Google TV Add-on may be incompatible with applications developed on previous versions of the Google TV Add-on. You agree that Google may stop (permanently or temporarily) providing the Google TV Add-on (or any features within the Google TV Add-on) to you or to users generally at Google's sole discretion, without prior notice to you.
+2026-10-02T14:37:31.6554257Z 
+2026-10-02T14:37:31.6555798Z 3.6 Nothing in this License Agreement gives you a right to use any of Google's or it’s licensors’ trade names, trademarks, service marks, logos, domain names, or other distinctive brand features.
+2026-10-02T14:37:31.6556986Z 
+2026-10-02T14:37:31.6558008Z 3.7 You agree that you will not remove, obscure, or alter any proprietary rights notices (including copyright and trademark notices) that may be affixed to or contained within the Google TV Add-on.
+2026-10-02T14:37:31.6559188Z 
+2026-10-02T14:37:31.6559375Z 4. Use of the Google TV Add-on by You
+2026-10-02T14:37:31.6559762Z 
+2026-10-02T14:37:31.6579575Z 4.1 Google agrees that it obtains no right, title or interest from you (or your licensors) under this License Agreement in or to any software applications that you develop using the Google TV Add-on, including any intellectual property rights that subsist in those applications.
+2026-10-02T14:37:31.6582127Z 
+2026-10-02T14:37:31.6584948Z 4.2 You agree to use the Google TV Add-on and write applications only for purposes that are permitted by (a) this License Agreement and (b) any applicable law, regulation or generally accepted practices or guidelines in the relevant jurisdictions (including any laws regarding the export of data or software to and from the United States or other relevant countries).
+2026-10-02T14:37:31.6587302Z 
+2026-10-02T14:37:31.6591994Z 4.3 You agree that if you use the Google TV Add-on to develop applications for general public users, you will protect the privacy and legal rights of those users. If the users provide you with user names, passwords, or other login information or personal information, your must make the users aware that the information will be available to your application, and you must provide legally adequate privacy notice and protection for those users. If your application stores personal or sensitive information provided by users, it must do so securely. If the user provides your application with Google Account information, your application may only use that information to access the user's Google Account when, and for the limited purposes for which, the user has given you explicit permission to do so.
+2026-10-02T14:37:31.6596852Z 
+2026-10-02T14:37:31.6599143Z 4.4 You agree that you will not engage in any activity with the Google TV Add-on, including the development or distribution of an application, that interferes with, disrupts, damages, or accesses in an unauthorized manner the servers, networks, or other properties or services of any third party including, but not limited to, Google, Multichannel Video Program Distributors or any mobile communications carrier.
+2026-10-02T14:37:31.6601772Z 
+2026-10-02T14:37:31.6603807Z 4.5 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any data, content, or resources that you create, transmit or display through the Google TV platform and/or applications for the Google TV platform, and for the consequences of your actions (including any loss or damage which Google may suffer) by doing so.
+2026-10-02T14:37:31.6605975Z 
+2026-10-02T14:37:31.6608354Z 4.6 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any breach of your obligations under this License Agreement, any applicable third party contract or Terms of Service, or any applicable law or regulation, and for the consequences (including any loss or damage which Google or any third party may suffer) of any such breach.
+2026-10-02T14:37:31.6611458Z 
+2026-10-02T14:37:31.6611677Z 5. Your Developer Credentials
+2026-10-02T14:37:31.6611985Z 
+2026-10-02T14:37:31.6613670Z 5.1 You agree that you are responsible for maintaining the confidentiality of any developer credentials that may be issued to you by Google or which you may choose yourself and that you will be solely responsible for all applications that are developed under your developer credentials.
+2026-10-02T14:37:31.6615383Z 
+2026-10-02T14:37:31.6615562Z 6. Privacy and Information
+2026-10-02T14:37:31.6615828Z 
+2026-10-02T14:37:31.6618684Z 6.1 In order to continually innovate and improve the Google TV Add-on, Google may collect certain usage statistics from the software including but not limited to a unique identifier, associated IP address, version number of the software, and information on which tools and/or services in the Google TV Add-on are being used and how they are being used. Before any of this information is collected, the Google TV Add-on will notify you and seek your consent. If you withhold consent, the information will not be collected.
+2026-10-02T14:37:31.6621867Z 
+2026-10-02T14:37:31.6622598Z 6.2 The data collected is examined in the aggregate to improve the Google TV Add-on and is maintained in accordance with Google's Privacy Policy.
+2026-10-02T14:37:31.6623474Z 
+2026-10-02T14:37:31.6623725Z 7. Third Party Applications for the Google TV Platform
+2026-10-02T14:37:31.6624098Z 
+2026-10-02T14:37:31.6627352Z 7.1 If you use the Google TV Add-on to run applications developed by a third party or that access data, content or resources provided by a third party, you agree that Google is not responsible for those applications, data, content, or resources. You understand that all data, content or resources which you may access through such third party applications are the sole responsibility of the person from which they originated and that Google is not liable for any loss or damage that you may experience as a result of the use or access of any of those third party applications, data, content, or resources.
+2026-10-02T14:37:31.6631138Z 
+2026-10-02T14:37:31.6633832Z 7.2 You should be aware the data, content, and resources presented to you through such a third party application may be protected by intellectual property rights which are owned by the providers (or by other persons or companies on their behalf). You may not modify, rent, lease, loan, sell, distribute or create derivative works based on these data, content, or resources (either in whole or in part) unless you have been specifically given permission to do so by the relevant owners.
+2026-10-02T14:37:31.6636677Z 
+2026-10-02T14:37:31.6638168Z 7.3 You acknowledge that your use of such third party applications, data, content, or resources may be subject to separate terms between you and the relevant third party. In that case, this License Agreement does not affect your legal relationship with these third parties.
+2026-10-02T14:37:31.6639874Z 
+2026-10-02T14:37:31.6640071Z 8. Using Google TV APIs
+2026-10-02T14:37:31.6640372Z 
+2026-10-02T14:37:31.6645316Z 8.1 If you use any Google TV API to retrieve data from Google, you acknowledge that the data (“Google TV API Content”) may be protected by intellectual property rights which are owned by Google or those parties that provide the data (or by other persons or companies on their behalf). Your use of any such API may be subject to additional Terms of Service. You may not modify, rent, lease, loan, sell, distribute or create derivative works based on this data (either in whole or in part) unless allowed by the relevant Terms of Service. Some portions of the Google TV API Content are licensed to Google by third parties, including but not limited to Tribune Media Services
+2026-10-02T14:37:31.6649180Z 
+2026-10-02T14:37:31.6650965Z 8.2 If you use any API to retrieve a user's data from Google, you acknowledge and agree that you shall retrieve data only with the user's explicit consent and only when, and for the limited purposes for which, the user has given you permission to do so.
+2026-10-02T14:37:31.6652488Z 
+2026-10-02T14:37:31.6652983Z 8.3 Except as explicitly permitted in Section 3 (Google TV Add-on License from Google), you must:
+2026-10-02T14:37:31.6653611Z 
+2026-10-02T14:37:31.6654645Z (a) not modify nor format the Google TV API Content except to the extent reasonably and technically necessary to optimize the display such Google TV API Content in your application;
+2026-10-02T14:37:31.6655914Z 
+2026-10-02T14:37:31.6656980Z (b) not edit the Google TV API Content in a manner that renders the Google TV API Content inaccurate of alters its inherent meaning (provided that displaying excerpts will not violate the foregoing); or
+2026-10-02T14:37:31.6658219Z 
+2026-10-02T14:37:31.6658707Z (c) not create any commercial audience measurement tool or service using the Google TV API Content
+2026-10-02T14:37:31.6659383Z 
+2026-10-02T14:37:31.6659580Z 9. Terminating this License Agreement
+2026-10-02T14:37:31.6659971Z 
+2026-10-02T14:37:31.6660511Z 9.1 This License Agreement will continue to apply until terminated by either you or Google as set out below.
+2026-10-02T14:37:31.6661452Z 
+2026-10-02T14:37:31.6662185Z 9.2 If you want to terminate this License Agreement, you may do so by ceasing your use of the Google TV Add-on and any relevant developer credentials.
+2026-10-02T14:37:31.6663082Z 
+2026-10-02T14:37:31.6663403Z 9.3 Google may at any time, terminate this License Agreement with you if:
+2026-10-02T14:37:31.6663888Z 
+2026-10-02T14:37:31.6664171Z (A) you have breached any provision of this License Agreement; or
+2026-10-02T14:37:31.6664627Z 
+2026-10-02T14:37:31.6664824Z (B) Google is required to do so by law; or
+2026-10-02T14:37:31.6665143Z 
+2026-10-02T14:37:31.6666230Z (C) the partner with whom Google offered certain parts of Google TV Add-on (such as APIs) to you has terminated its relationship with Google or ceased to offer certain parts of the Google TV Add-on to you; or
+2026-10-02T14:37:31.6667666Z 
+2026-10-02T14:37:31.6669448Z (D) Google decides to no longer providing the Google TV Add-on or certain parts of the Google TV Add-on to users in the country in which you are resident or from which you use the service, or the provision of the Google TV Add-on or certain Google TV Add-on services to you by Google is, in Google's sole discretion, no longer commercially viable.
+2026-10-02T14:37:31.6671602Z 
+2026-10-02T14:37:31.6674108Z 9.4 When this License Agreement comes to an end, all of the legal rights, obligations and liabilities that you and Google have benefited from, been subject to (or which have accrued over time whilst this License Agreement has been in force) or which are expressed to continue indefinitely, shall be unaffected by this cessation, and the provisions of paragraph 14.7 shall continue to apply to such rights, obligations and liabilities indefinitely.
+2026-10-02T14:37:31.6676685Z 
+2026-10-02T14:37:31.6676867Z 10. DISCLAIMER OF WARRANTIES
+2026-10-02T14:37:31.6677138Z 
+2026-10-02T14:37:31.6678184Z 10.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE GOOGLE TV ADD-ON IS AT YOUR SOLE RISK AND THAT THE GOOGLE TV ADD-ON IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.
+2026-10-02T14:37:31.6679395Z 
+2026-10-02T14:37:31.6681110Z 10.2 YOUR USE OF THE GOOGLE TV ADD-ON AND ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE GOOGLE TV ADD-ON IS AT YOUR OWN DISCRETION AND RISK AND YOU ARE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM SUCH USE.
+2026-10-02T14:37:31.6682804Z 
+2026-10-02T14:37:31.6684233Z 10.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+2026-10-02T14:37:31.6685857Z 
+2026-10-02T14:37:31.6686209Z 11. LIMITATION OF LIABILITY
+2026-10-02T14:37:31.6686493Z 
+2026-10-02T14:37:31.6688923Z 11.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.
+2026-10-02T14:37:31.6691610Z 
+2026-10-02T14:37:31.6691722Z 12. Indemnification
+2026-10-02T14:37:31.6691911Z 
+2026-10-02T14:37:31.6694306Z 12.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys fees) arising out of or accruing from (a) your use of the Google TV Add-on, (b) any application you develop on the Google TV Add-on that infringes any copyright, trademark, trade secret, trade dress, patent or other intellectual property right of any person or defames any person or violates their rights of publicity or privacy, and (c) any non-compliance by you with this License Agreement.
+2026-10-02T14:37:31.6696765Z 
+2026-10-02T14:37:31.6696877Z 13. Changes to the License Agreement
+2026-10-02T14:37:31.6697057Z 
+2026-10-02T14:37:31.6697374Z 13.1 Google may make changes to the License Agreement as it distributes new versions of the Google TV Add-on.
+2026-10-02T14:37:31.6697779Z 
+2026-10-02T14:37:31.6697869Z 14. General Legal Terms
+2026-10-02T14:37:31.6698014Z 
+2026-10-02T14:37:31.6699042Z 14.1 This License Agreement constitute the whole legal agreement between you and Google and govern your use of the Google TV Add-on (excluding any services which Google may provide to you under a separate written agreement), and completely replace any prior agreements between you and Google in relation to the Google TV Add-on.
+2026-10-02T14:37:31.6700326Z 
+2026-10-02T14:37:31.6701546Z 14.2 You agree that if Google does not exercise or enforce any legal right or remedy which is contained in this License Agreement (or which Google has the benefit of under any applicable law), this will not be taken to be a formal waiver of Google's rights and that those rights or remedies will still be available to Google.
+2026-10-02T14:37:31.6702637Z 
+2026-10-02T14:37:31.6703729Z 14.3 If any court of law, having the jurisdiction to decide on this matter, rules that any provision of this License Agreement is invalid, then that provision will be removed from this License Agreement without affecting the rest of this License Agreement. The remaining provisions of this License Agreement will continue to be valid and enforceable.
+2026-10-02T14:37:31.6704921Z 
+2026-10-02T14:37:31.6706842Z 14.4 You acknowledge and agree that Google’s API data licensors and each member of the group of companies of which Google is the parent shall be third party beneficiaries to this License Agreement and that such other companies shall be entitled to directly enforce, and rely upon, any provision of this License Agreement that confers a benefit on (or rights in favor of) them. Other than this, no other person or company shall be third party beneficiaries to this License Agreement.
+2026-10-02T14:37:31.6708436Z 
+2026-10-02T14:37:31.6709353Z 14.5 EXPORT RESTRICTIONS. THE GOOGLE TV ADD-ON IS SUBJECT TO UNITED STATES EXPORT LAWS AND REGULATIONS. YOU MUST COMPLY WITH ALL DOMESTIC AND INTERNATIONAL EXPORT LAWS AND REGULATIONS THAT APPLY TO THE GOOGLE TV ADD-ON. THESE LAWS INCLUDE RESTRICTIONS ON DESTINATIONS, END USERS AND END USE.
+2026-10-02T14:37:31.6710347Z 
+2026-10-02T14:37:31.6711905Z 14.6 The rights granted in this License Agreement may not be assigned or transferred by either you or Google without the prior written approval of the other party. Neither you nor Google shall be permitted to delegate their responsibilities or obligations under this License Agreement without the prior written approval of the other party.
+2026-10-02T14:37:31.6713108Z 
+2026-10-02T14:37:31.6714911Z 14.7 This License Agreement, and your relationship with Google under this License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from this License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.
+2026-10-02T14:37:31.6716777Z 
+2026-10-02T14:37:31.6716783Z 
+2026-10-02T14:37:31.6716868Z August 15, 2011
+2026-10-02T14:37:31.6717091Z ---------------------------------------
+2026-10-02T14:37:31.6717369Z Accept? (y/N): 
+2026-10-02T14:37:31.6717641Z 2/6: License android-googlexr-license:
+2026-10-02T14:37:31.6717924Z ---------------------------------------
+2026-10-02T14:37:31.6718889Z To get started with the Android XR Emulator System Image SDK, you must agree to the following terms and conditions. As described below, please note that this is a preview, emulated version of the Android XR OS, subject to change, that you use at your own risk.
+2026-10-02T14:37:31.6719772Z 
+2026-10-02T14:37:31.6719942Z This is the Android XR Emulator System Image SDK License Agreement
+2026-10-02T14:37:31.6720206Z 
+2026-10-02T14:37:31.6720288Z 1. Introduction
+2026-10-02T14:37:31.6720407Z 
+2026-10-02T14:37:31.6722091Z 1.1 The Android Android XR Emulator System Image SDK (referred to in the License Agreement as the "SDK" and specifically including the Android system files,, packaged APIs, library files (if and when they are made available), and Google applications and APIs add-ons) is licensed to you subject to the terms of the License Agreement. The License Agreement forms a legally binding contract between you and Google in relation to your use of the SDK.
+2026-10-02T14:37:31.6723737Z 
+2026-10-02T14:37:31.6724399Z 1.2 "Android" means the Android software stack for devices, as made available under the Android Open Source Project, which is located at the following URL: https://source.android.com/, as updated from time to time.
+2026-10-02T14:37:31.6725150Z 
+2026-10-02T14:37:31.6725796Z 1.3 "Google" means Google LLC, organized under the laws of the State of Delaware, USA, and operating under the laws of the USA with principal place of business at 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.
+2026-10-02T14:37:31.6726535Z 
+2026-10-02T14:37:31.6726642Z 2. Accepting this License Agreement
+2026-10-02T14:37:31.6726814Z 
+2026-10-02T14:37:31.6727372Z 2.1 In order to use the SDK, you must first agree to the License Agreement. You may not use the SDK if you do not accept the License Agreement.
+2026-10-02T14:37:31.6729170Z 
+2026-10-02T14:37:31.6729651Z 2.2 By clicking to accept and/or using this SDK, you hereby agree to the terms of the License Agreement.
+2026-10-02T14:37:31.6730329Z 
+2026-10-02T14:37:31.6731865Z 2.3 You may not use the SDK and may not accept the License Agreement if you are a person barred from receiving the SDK under the laws of the United States or other countries, including the country in which you are resident or from which you use the SDK.
+2026-10-02T14:37:31.6733429Z 
+2026-10-02T14:37:31.6735466Z 2.4 If you are agreeing to be bound by the License Agreement on behalf of your employer or other entity, you represent and warrant that you have full legal authority to bind your employer or such entity to the License Agreement. If you do not have the requisite authority, you may not accept the License Agreement or use the SDK on behalf of your employer or other entity.
+2026-10-02T14:37:31.6737616Z 
+2026-10-02T14:37:31.6737776Z 3. SDK License from Google
+2026-10-02T14:37:31.6738036Z 
+2026-10-02T14:37:31.6739576Z 3.1 Subject to the terms of the License Agreement, Google grants you a limited, worldwide, royalty-free, non-assignable, non-exclusive, and non-sublicensable license to use the SDK solely to develop applications for Android XR.
+2026-10-02T14:37:31.6741252Z 
+2026-10-02T14:37:31.6742486Z 3.2 You may not use this SDK to develop applications for other platforms or to develop another SDK. You are of course free to develop applications for other platforms provided that this SDK is not used for that purpose.
+2026-10-02T14:37:31.6743869Z 
+2026-10-02T14:37:31.6746183Z 3.3 You agree that Google or third parties own all legal right, title and interest in and to the SDK, including any Intellectual Property Rights that subsist in the SDK. "Intellectual Property Rights" means any and all rights under patent law, copyright law, trade secret law, trademark law, and any and all other proprietary rights. Google reserves all rights not expressly granted to you.
+2026-10-02T14:37:31.6748609Z 
+2026-10-02T14:37:31.6752148Z 3.4 You may not use the SDK for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the SDK or any part of the SDK; or (b) load any part of the SDK onto a mobile handset or any other hardware device except a personal computer, combine any part of the SDK with other software, or distribute any software or device incorporating a part of the SDK.
+2026-10-02T14:37:31.6755609Z 
+2026-10-02T14:37:31.6758043Z 3.5 Use, reproduction and distribution of components of the SDK licensed under an open source software license are governed solely by the terms of that open source software license and not the License Agreement. You agree to remain a licensee in good standing in regard to such open source software licenses under all the rights granted and to refrain from any actions that may terminate, suspend, or breach such rights.
+2026-10-02T14:37:31.6761032Z 
+2026-10-02T14:37:31.6763459Z 3.6 You agree that the form and nature of the SDK that Google provides may change without prior notice to you and that future versions of the SDK may be incompatible with applications developed on previous versions of the SDK. You agree that Google may stop (permanently or temporarily) providing the SDK (or any features within the SDK) to you or to users generally at Google's sole discretion, without prior notice to you.
+2026-10-02T14:37:31.6766046Z 
+2026-10-02T14:37:31.6766966Z 3.7 Nothing in the License Agreement gives you a right to use any of Google's trade names, trademarks, service marks, logos, domain names, or other distinctive brand features.
+2026-10-02T14:37:31.6768066Z 
+2026-10-02T14:37:31.6769095Z 3.8 You agree that you will not remove, obscure, or alter any proprietary rights notices (including copyright and trademark notices) that may be affixed to or contained within the SDK.
+2026-10-02T14:37:31.6770293Z 
+2026-10-02T14:37:31.6770448Z 4. Use of the SDK by You
+2026-10-02T14:37:31.6770853Z 
+2026-10-02T14:37:31.6772358Z 4.1 Google agrees that it obtains no right, title or interest from you (or your licensors) under the License Agreement in or to any software applications that you develop using the SDK, including any intellectual property rights that subsist in those applications.
+2026-10-02T14:37:31.6774031Z 
+2026-10-02T14:37:31.6776087Z 4.2 You agree to use the SDK and write applications only for purposes that are permitted by (a) the License Agreement and (b) any applicable law, regulation or generally accepted practices or guidelines in the relevant jurisdictions (including any laws regarding the export of data or software to and from the United States or other relevant countries).
+2026-10-02T14:37:31.6778299Z 
+2026-10-02T14:37:31.6783102Z 4.3 You agree that if you use the SDK to develop applications for general public users, you will protect the privacy and legal rights of those users. If the users provide you with user names, passwords, or other login information or personal information, you must make the users aware that the information will be available to your application, and you must provide legally adequate privacy notice and protection for those users. If your application stores personal or sensitive information provided by users, it must do so securely. If the user provides your application with Google Account information, your application may only use that information to access the user's Google Account when, and for the limited purposes for which, the user has given you permission to do so.
+2026-10-02T14:37:31.6787689Z 
+2026-10-02T14:37:31.6789749Z 4.4 You agree that you will not engage in any activity with the SDK, including the development or distribution of an application, that interferes with, disrupts, damages, or accesses in an unauthorized manner the servers, networks, or other properties or services of any third party including, but not limited to, Google or any mobile communications carrier.
+2026-10-02T14:37:31.6792206Z 
+2026-10-02T14:37:31.6794212Z 4.5 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any data, content, or resources that you create, transmit or display through Android and/or applications for Android, and for the consequences of your actions (including any loss or damage which Google may suffer) by doing so.
+2026-10-02T14:37:31.6796363Z 
+2026-10-02T14:37:31.6798635Z 4.6 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any breach of your obligations under the License Agreement, any applicable third party contract or Terms of Service, or any applicable law or regulation, and for the consequences (including any loss or damage which Google or any third party may suffer) of any such breach.
+2026-10-02T14:37:31.6801213Z 
+2026-10-02T14:37:31.6802905Z 4.7 The SDK is in development, and your testing and feedback are an important part of the development process. By using the SDK, you acknowledge that implementation of some features are still under development and that you should not rely on the SDK having the full functionality of a stable release.
+2026-10-02T14:37:31.6804933Z 
+2026-10-02T14:37:31.6805105Z 5. Your Developer Credentials
+2026-10-02T14:37:31.6805398Z 
+2026-10-02T14:37:31.6807012Z 5.1 You agree that you are responsible for maintaining the confidentiality of any developer credentials that may be issued to you by Google or which you may choose yourself and that you will be solely responsible for all applications that are developed under your developer credentials.
+2026-10-02T14:37:31.6808820Z 
+2026-10-02T14:37:31.6808991Z 6. Privacy and Information
+2026-10-02T14:37:31.6809252Z 
+2026-10-02T14:37:31.6812173Z 6.1 In order to continually innovate and improve the SDK, Google may collect certain usage statistics from the software including but not limited to a unique identifier, associated IP address, version number of the software, and information on which tools and/or services in the SDK are being used and how they are being used. Before any of this information is collected, the SDK will notify you and seek your consent. If you withhold consent, the information will not be collected.
+2026-10-02T14:37:31.6815139Z 
+2026-10-02T14:37:31.6816301Z 6.2 The data collected is examined in the aggregate to improve the SDK and is maintained in accordance with Google's Privacy Policy, which is located at the following URL: https://policies.google.com/privacy
+2026-10-02T14:37:31.6817607Z 
+2026-10-02T14:37:31.6818117Z 6.3 Anonymized and aggregated sets of the data may be shared with Google partners to improve the SDK.
+2026-10-02T14:37:31.6818796Z 
+2026-10-02T14:37:31.6818961Z 7. Third Party Applications
+2026-10-02T14:37:31.6819231Z 
+2026-10-02T14:37:31.6822992Z 7.1 If you use the SDK to run applications developed by a third party or that access data, content or resources provided by a third party, you agree that Google is not responsible for those applications, data, content, or resources. You understand that all data, content or resources which you may access through such third party applications are the sole responsibility of the person from which they originated and that Google is not liable for any loss or damage that you may experience as a result of the use or access of any of those third party applications, data, content, or resources.
+2026-10-02T14:37:31.6826571Z 
+2026-10-02T14:37:31.6829417Z 7.2 You should be aware that the data, content, and resources presented to you through such a third party application may be protected by intellectual property rights which are owned by the providers (or by other persons or companies on their behalf). You may not modify, rent, lease, loan, sell, distribute or create derivative works based on these data, content, or resources (either in whole or in part) unless you have been specifically given permission to do so by the relevant owners.
+2026-10-02T14:37:31.6832619Z 
+2026-10-02T14:37:31.6834159Z 7.3 You acknowledge that your use of such third party applications, data, content, or resources may be subject to separate terms between you and the relevant third party. In that case, the License Agreement does not affect your legal relationship with these third parties.
+2026-10-02T14:37:31.6835881Z 
+2026-10-02T14:37:31.6836039Z 8. Using Android APIs
+2026-10-02T14:37:31.6836269Z 
+2026-10-02T14:37:31.6836419Z 8.1 Google Data APIs
+2026-10-02T14:37:31.6836635Z 
+2026-10-02T14:37:31.6839472Z 8.1.1 If you use any API to retrieve data from Google, you acknowledge that the data may be protected by intellectual property rights which are owned by Google or those parties that provide the data (or by other persons or companies on their behalf). Your use of any such API may be subject to additional Terms of Service. You may not modify, rent, lease, loan, sell, distribute or create derivative works based on this data (either in whole or in part) unless allowed by the relevant Terms of Service.
+2026-10-02T14:37:31.6842657Z 
+2026-10-02T14:37:31.6847835Z 8.1.2 If you use any API to retrieve a user's data from Google, you acknowledge and agree that you shall retrieve data only with the user's explicit consent and only when, and for the limited purposes for which, the user has given you permission to do so. If you use the Android Recognition Service API, documented at the following URL: https://developer.android.com/reference/android/speech/RecognitionService, as updated from time to time, you acknowledge that the use of the API is subject to the Data Processing Addendum for Products where Google is a Data Processor, which is located at the following URL: https://privacy.google.com/businesses/gdprprocessorterms/, as updated from time to time. By clicking to accept, you hereby agree to the terms of the Data Processing Addendum for Products where Google is a Data Processor.
+2026-10-02T14:37:31.6852954Z 
+2026-10-02T14:37:31.6853130Z 9. Terminating this License Agreement
+2026-10-02T14:37:31.6853429Z 
+2026-10-02T14:37:31.6853956Z 9.1 The License Agreement will continue to apply until terminated by either you or Google as set out below.
+2026-10-02T14:37:31.6854652Z 
+2026-10-02T14:37:31.6855304Z 9.2 If you want to terminate the License Agreement, you may do so by ceasing your use of the SDK and any relevant developer credentials.
+2026-10-02T14:37:31.6856085Z 
+2026-10-02T14:37:31.6858104Z 9.3 Google may at any time, terminate the License Agreement with you if: (A) you have breached any provision of the License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of SDK (such as APIs) to you has terminated its relationship with Google or ceased to offer certain parts of the SDK to you; or (D) Google decides to no longer provide the SDK or certain parts of the SDK to users in the country in which you are resident or from which you use the service, or the provision of the SDK or certain SDK services to you by Google is, in Google's sole discretion, no longer commercially viable.
+2026-10-02T14:37:31.6861449Z 
+2026-10-02T14:37:31.6863057Z 9.4 When the License Agreement comes to an end, all of the legal rights, obligations and liabilities that you and Google have benefited from, been subject to (or which have accrued over time whilst the License Agreement has been in force) or which are expressed to continue indefinitely, shall be unaffected by this cessation, and the provisions of paragraph 14.7 shall continue to apply to such rights, obligations and liabilities indefinitely.
+2026-10-02T14:37:31.6864552Z 
+2026-10-02T14:37:31.6864664Z 10. DISCLAIMER OF WARRANTIES
+2026-10-02T14:37:31.6864833Z 
+2026-10-02T14:37:31.6865353Z 10.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE SDK IS AT YOUR SOLE RISK AND THAT THE SDK IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.
+2026-10-02T14:37:31.6865960Z 
+2026-10-02T14:37:31.6866757Z 10.2 YOUR USE OF THE SDK AND ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SDK IS AT YOUR OWN DISCRETION AND RISK AND YOU ARE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM SUCH USE.
+2026-10-02T14:37:31.6868011Z 
+2026-10-02T14:37:31.6869082Z 10.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+2026-10-02T14:37:31.6869978Z 
+2026-10-02T14:37:31.6870076Z 11. LIMITATION OF LIABILITY
+2026-10-02T14:37:31.6870230Z 
+2026-10-02T14:37:31.6872064Z 11.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.
+2026-10-02T14:37:31.6874148Z 
+2026-10-02T14:37:31.6874250Z 12. Indemnification
+2026-10-02T14:37:31.6874468Z 
+2026-10-02T14:37:31.6876983Z 12.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys fees) arising out of or accruing from (a) your use of the SDK, (b) any application you develop on the SDK that infringes any copyright, trademark, trade secret, trade dress, patent or other intellectual property right of any person or defames any person or violates their rights of publicity or privacy, and (c) any non-compliance by you with the License Agreement.
+2026-10-02T14:37:31.6879422Z 
+2026-10-02T14:37:31.6879536Z 13. Changes to the License Agreement
+2026-10-02T14:37:31.6879716Z 
+2026-10-02T14:37:31.6880455Z 13.1 Google may make changes to the License Agreement as it distributes new versions of the SDK. When these changes are made, Google will make a new version of the License Agreement available on the website where the SDK is made available.
+2026-10-02T14:37:31.6881522Z 
+2026-10-02T14:37:31.6881908Z 14. General Legal Terms
+2026-10-02T14:37:31.6895402Z 
+2026-10-02T14:37:31.6896429Z 14.1 The License Agreement constitutes the whole legal agreement between you and Google and governs your use of the SDK (excluding any services which Google may provide to you under a separate written agreement), and completely replaces any prior agreements between you and Google in relation to the SDK.
+2026-10-02T14:37:31.6897493Z 
+2026-10-02T14:37:31.6898469Z 14.2 You agree that if Google does not exercise or enforce any legal right or remedy which is contained in the License Agreement (or which Google has the benefit of under any applicable law), this will not be taken to be a formal waiver of Google's rights and that those rights or remedies will still be available to Google.
+2026-10-02T14:37:31.6899546Z 
+2026-10-02T14:37:31.6901142Z 14.3 If any court of law, having the jurisdiction to decide on this matter, rules that any provision of the License Agreement is invalid, then that provision will be removed from the License Agreement without affecting the rest of the License Agreement. The remaining provisions of the License Agreement will continue to be valid and enforceable.
+2026-10-02T14:37:31.6902546Z 
+2026-10-02T14:37:31.6903945Z 14.4 You acknowledge and agree that each member of the group of companies of which Google is the parent shall be third party beneficiaries to the License Agreement and that such other companies shall be entitled to directly enforce, and rely upon, any provision of the License Agreement that confers a benefit on (or rights in favor of) them. Other than this, no other person or company shall be third party beneficiaries to the License Agreement.
+2026-10-02T14:37:31.6905415Z 
+2026-10-02T14:37:31.6906239Z 14.5 EXPORT RESTRICTIONS. THE SDK IS SUBJECT TO UNITED STATES EXPORT LAWS AND REGULATIONS. YOU MUST COMPLY WITH ALL DOMESTIC AND INTERNATIONAL EXPORT LAWS AND REGULATIONS THAT APPLY TO THE SDK. THESE LAWS INCLUDE RESTRICTIONS ON DESTINATIONS, END USERS AND END USE.
+2026-10-02T14:37:31.6907134Z 
+2026-10-02T14:37:31.6908190Z 14.6 The rights granted in the License Agreement may not be assigned or transferred by either you or Google without the prior written approval of the other party. Neither you nor Google shall be permitted to delegate their responsibilities or obligations under the License Agreement without the prior written approval of the other party.
+2026-10-02T14:37:31.6909338Z 
+2026-10-02T14:37:31.6911413Z 14.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.
+2026-10-02T14:37:31.6913560Z ---------------------------------------
+2026-10-02T14:37:31.6913844Z Accept? (y/N): 
+2026-10-02T14:37:31.6914092Z 3/6: License android-sdk-arm-dbt-license:
+2026-10-02T14:37:31.6914384Z ---------------------------------------
+2026-10-02T14:37:31.6914646Z Terms and Conditions
+2026-10-02T14:37:31.6914792Z 
+2026-10-02T14:37:31.6914963Z This is the Android Software Development Kit License Agreement
+2026-10-02T14:37:31.6915212Z 
+2026-10-02T14:37:31.6915301Z 1. Introduction
+2026-10-02T14:37:31.6915420Z 
+2026-10-02T14:37:31.6917002Z 1.1 The Android Software Development Kit (referred to in the License Agreement as the "SDK" and specifically including the Android system files, packaged APIs, and Google APIs add-ons) is licensed to you subject to the terms of the License Agreement. The License Agreement forms a legally binding contract between you and Google in relation to your use of the SDK.
+2026-10-02T14:37:31.6918892Z 
+2026-10-02T14:37:31.6919813Z 1.2 "Android" means the Android software stack for devices, as made available under the Android Open Source Project, which is located at the following URL: http://source.android.com/, as updated from time to time.
+2026-10-02T14:37:31.6921214Z 
+2026-10-02T14:37:31.6922345Z 1.3 A "compatible implementation" means any Android device that (i) complies with the Android Compatibility Definition document, which can be found at the Android compatibility website (http://source.android.com/compatibility) and which may be updated from time to time; and (ii) successfully passes the Android Compatibility Test Suite (CTS).
+2026-10-02T14:37:31.6923537Z 
+2026-10-02T14:37:31.6924015Z 1.4 "Google" means Google Inc., a Delaware corporation with principal place of business at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
+2026-10-02T14:37:31.6924575Z 
+2026-10-02T14:37:31.6924581Z 
+2026-10-02T14:37:31.6924869Z 2. Accepting the License Agreement
+2026-10-02T14:37:31.6925061Z 
+2026-10-02T14:37:31.6925458Z 2.1 In order to use the SDK, you must first agree to the License Agreement. You may not use the SDK if you do not accept the License Agreement.
+2026-10-02T14:37:31.6925944Z 
+2026-10-02T14:37:31.6926164Z 2.2 By clicking to accept, you hereby agree to the terms of the License Agreement.
+2026-10-02T14:37:31.6926469Z 
+2026-10-02T14:37:31.6927219Z 2.3 You may not use the SDK and may not accept the License Agreement if you are a person barred from receiving the SDK under the laws of the United States or other countries, including the country in which you are resident or from which you use the SDK.
+2026-10-02T14:37:31.6928045Z 
+2026-10-02T14:37:31.6929165Z 2.4 If you are agreeing to be bound by the License Agreement on behalf of your employer or other entity, you represent and warrant that you have full legal authority to bind your employer or such entity to the License Agreement. If you do not have the requisite authority, you may not accept the License Agreement or use the SDK on behalf of your employer or other entity.
+2026-10-02T14:37:31.6930369Z 
+2026-10-02T14:37:31.6930374Z 
+2026-10-02T14:37:31.6930483Z 3. SDK License from Google
+2026-10-02T14:37:31.6930631Z 
+2026-10-02T14:37:31.6931777Z 3.1 Subject to the terms of the License Agreement, Google grants you a limited, worldwide, royalty-free, non-assignable, non-exclusive, and non-sublicensable license to use the SDK solely to develop applications for compatible implementations of Android.
+2026-10-02T14:37:31.6932676Z 
+2026-10-02T14:37:31.6933707Z 3.2 You may not use this SDK to develop applications for other platforms (including non-compatible implementations of Android) or to develop another SDK. You are of course free to develop applications for other platforms, including non-compatible implementations of Android, provided that this SDK is not used for that purpose.
+2026-10-02T14:37:31.6934980Z 
+2026-10-02T14:37:31.6936197Z 3.3 You agree that Google or third parties own all legal right, title and interest in and to the SDK, including any Intellectual Property Rights that subsist in the SDK. "Intellectual Property Rights" means any and all rights under patent law, copyright law, trade secret law, trademark law, and any and all other proprietary rights. Google reserves all rights not expressly granted to you.
+2026-10-02T14:37:31.6937481Z 
+2026-10-02T14:37:31.6938532Z 3.4 You may not use the SDK for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the SDK or any part of the SDK.
+2026-10-02T14:37:31.6939672Z 
+2026-10-02T14:37:31.6940305Z 3.5 Use, reproduction and distribution of components of the SDK licensed under an open source software license are governed solely by the terms of that open source software license and not the License Agreement.
+2026-10-02T14:37:31.6941372Z 
+2026-10-02T14:37:31.6942689Z 3.6 You agree that the form and nature of the SDK that Google provides may change without prior notice to you and that future versions of the SDK may be incompatible with applications developed on previous versions of the SDK. You agree that Google may stop (permanently or temporarily) providing the SDK (or any features within the SDK) to you or to users generally at Google's sole discretion, without prior notice to you.
+2026-10-02T14:37:31.6944071Z 
+2026-10-02T14:37:31.6944582Z 3.7 Nothing in the License Agreement gives you a right to use any of Google's trade names, trademarks, service marks, logos, domain names, or other distinctive brand features.
+2026-10-02T14:37:31.6945181Z 
+2026-10-02T14:37:31.6945726Z 3.8 You agree that you will not remove, obscure, or alter any proprietary rights notices (including copyright and trademark notices) that may be affixed to or contained within the SDK.
+2026-10-02T14:37:31.6946373Z 
+2026-10-02T14:37:31.6946379Z 
+2026-10-02T14:37:31.6946653Z 4. Use of the SDK by You
+2026-10-02T14:37:31.6946802Z 
+2026-10-02T14:37:31.6947618Z 4.1 Google agrees that it obtains no right, title or interest from you (or your licensors) under the License Agreement in or to any software applications that you develop using the SDK, including any intellectual property rights that subsist in those applications.
+2026-10-02T14:37:31.6948508Z 
+2026-10-02T14:37:31.6949589Z 4.2 You agree to use the SDK and write applications only for purposes that are permitted by (a) the License Agreement and (b) any applicable law, regulation or generally accepted practices or guidelines in the relevant jurisdictions (including any laws regarding the export of data or software to and from the United States or other relevant countries).
+2026-10-02T14:37:31.6951167Z 
+2026-10-02T14:37:31.6953706Z 4.3 You agree that if you use the SDK to develop applications for general public users, you will protect the privacy and legal rights of those users. If the users provide you with user names, passwords, or other login information or personal information, you must make the users aware that the information will be available to your application, and you must provide legally adequate privacy notice and protection for those users. If your application stores personal or sensitive information provided by users, it must do so securely. If the user provides your application with Google Account information, your application may only use that information to access the user's Google Account when, and for the limited purposes for which, the user has given you permission to do so.
+2026-10-02T14:37:31.6956254Z 
+2026-10-02T14:37:31.6957372Z 4.4 You agree that you will not engage in any activity with the SDK, including the development or distribution of an application, that interferes with, disrupts, damages, or accesses in an unauthorized manner the servers, networks, or other properties or services of any third party including, but not limited to, Google or any mobile communications carrier.
+2026-10-02T14:37:31.6959094Z 
+2026-10-02T14:37:31.6960215Z 4.5 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any data, content, or resources that you create, transmit or display through Android and/or applications for Android, and for the consequences of your actions (including any loss or damage which Google may suffer) by doing so.
+2026-10-02T14:37:31.6961550Z 
+2026-10-02T14:37:31.6962757Z 4.6 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any breach of your obligations under the License Agreement, any applicable third party contract or Terms of Service, or any applicable law or regulation, and for the consequences (including any loss or damage which Google or any third party may suffer) of any such breach.
+2026-10-02T14:37:31.6964049Z 
+2026-10-02T14:37:31.6966059Z 4.7 This software enables the execution of intellectual property owned by Arm Limited. You agree that your use of the software, that allows execution of ARM Instruction Set Architecture (“ISA”) compliant executables for application development and debug only on x86 desktop, laptop, customer on-premise servers, and customer-procured cloud-based environments.
+2026-10-02T14:37:31.6967317Z 
+2026-10-02T14:37:31.6967440Z 5. Your Developer Credentials
+2026-10-02T14:37:31.6967613Z 
+2026-10-02T14:37:31.6968502Z 5.1 You agree that you are responsible for maintaining the confidentiality of any developer credentials that may be issued to you by Google or which you may choose yourself and that you will be solely responsible for all applications that are developed under your developer credentials.
+2026-10-02T14:37:31.6969772Z 
+2026-10-02T14:37:31.6969886Z 6. Privacy and Information
+2026-10-02T14:37:31.6970049Z 
+2026-10-02T14:37:31.6971863Z 6.1 In order to continually innovate and improve the SDK, Google may collect certain usage statistics from the software including but not limited to a unique identifier, associated IP address, version number of the software, and information on which tools and/or services in the SDK are being used and how they are being used. Before any of this information is collected, the SDK will notify you and seek your consent. If you withhold consent, the information will not be collected.
+2026-10-02T14:37:31.6974092Z 
+2026-10-02T14:37:31.6974673Z 6.2 The data collected is examined in the aggregate to improve the SDK and is maintained in accordance with Google's Privacy Policy.
+2026-10-02T14:37:31.6975169Z 
+2026-10-02T14:37:31.6975175Z 
+2026-10-02T14:37:31.6975283Z 7. Third Party Applications
+2026-10-02T14:37:31.6975450Z 
+2026-10-02T14:37:31.6977306Z 7.1 If you use the SDK to run applications developed by a third party or that access data, content or resources provided by a third party, you agree that Google is not responsible for those applications, data, content, or resources. You understand that all data, content or resources which you may access through such third party applications are the sole responsibility of the person from which they originated and that Google is not liable for any loss or damage that you may experience as a result of the use or access of any of those third party applications, data, content, or resources.
+2026-10-02T14:37:31.6979225Z 
+2026-10-02T14:37:31.6980989Z 7.2 You should be aware the data, content, and resources presented to you through such a third party application may be protected by intellectual property rights which are owned by the providers (or by other persons or companies on their behalf). You may not modify, rent, lease, loan, sell, distribute or create derivative works based on these data, content, or resources (either in whole or in part) unless you have been specifically given permission to do so by the relevant owners.
+2026-10-02T14:37:31.6982611Z 
+2026-10-02T14:37:31.6983459Z 7.3 You acknowledge that your use of such third party applications, data, content, or resources may be subject to separate terms between you and the relevant third party. In that case, the License Agreement does not affect your legal relationship with these third parties.
+2026-10-02T14:37:31.6984563Z 
+2026-10-02T14:37:31.6984575Z 
+2026-10-02T14:37:31.6984671Z 8. Using Android APIs
+2026-10-02T14:37:31.6984813Z 
+2026-10-02T14:37:31.6984906Z 8.1 Google Data APIs
+2026-10-02T14:37:31.6985044Z 
+2026-10-02T14:37:31.6986582Z 8.1.1 If you use any API to retrieve data from Google, you acknowledge that the data may be protected by intellectual property rights which are owned by Google or those parties that provide the data (or by other persons or companies on their behalf). Your use of any such API may be subject to additional Terms of Service. You may not modify, rent, lease, loan, sell, distribute or create derivative works based on this data (either in whole or in part) unless allowed by the relevant Terms of Service.
+2026-10-02T14:37:31.6988184Z 
+2026-10-02T14:37:31.6991126Z 8.1.2 If you use any API to retrieve a user's data from Google, you acknowledge and agree that you shall retrieve data only with the user's explicit consent and only when, and for the limited purposes for which, the user has given you permission to do so. If you use the Android Recognition Service API, documented at the following URL: https://developer.android.com/reference/android/speech/RecognitionService, as updated from time to time, you acknowledge that the use of the API is subject to the Data Processing Addendum for Products where Google is a Data Processor, which is located at the following URL: https://privacy.google.com/businesses/gdprprocessorterms/, as updated from time to time. By clicking to accept, you hereby agree to the terms of the Data Processing Addendum for Products where Google is a Data Processor.
+2026-10-02T14:37:31.6993890Z 
+2026-10-02T14:37:31.6993896Z 
+2026-10-02T14:37:31.6994014Z 9. Terminating the License Agreement
+2026-10-02T14:37:31.6994196Z 
+2026-10-02T14:37:31.6994511Z 9.1 The License Agreement will continue to apply until terminated by either you or Google as set out below.
+2026-10-02T14:37:31.6994911Z 
+2026-10-02T14:37:31.6995427Z 9.2 If you want to terminate the License Agreement, you may do so by ceasing your use of the SDK and any relevant developer credentials.
+2026-10-02T14:37:31.6995907Z 
+2026-10-02T14:37:31.6997891Z 9.3 Google may at any time, terminate the License Agreement with you if: (A) you have breached any provision of the License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of SDK (such as APIs) to you has terminated its relationship with Google or ceased to offer certain parts of the SDK to you; or (D) Google decides to no longer provide the SDK or certain parts of the SDK to users in the country in which you are resident or from which you use the service, or the provision of the SDK or certain SDK services to you by Google is, in Google's sole discretion, no longer commercially viable.
+2026-10-02T14:37:31.6999973Z 
+2026-10-02T14:37:31.7002269Z 9.4 When the License Agreement comes to an end, all of the legal rights, obligations and liabilities that you and Google have benefited from, been subject to (or which have accrued over time whilst the License Agreement has been in force) or which are expressed to continue indefinitely, shall be unaffected by this cessation, and the provisions of paragraph 14.7 shall continue to apply to such rights, obligations and liabilities indefinitely.
+2026-10-02T14:37:31.7005065Z 
+2026-10-02T14:37:31.7005076Z 
+2026-10-02T14:37:31.7005267Z 10. DISCLAIMER OF WARRANTIES
+2026-10-02T14:37:31.7005563Z 
+2026-10-02T14:37:31.7006506Z 10.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE SDK IS AT YOUR SOLE RISK AND THAT THE SDK IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.
+2026-10-02T14:37:31.7007569Z 
+2026-10-02T14:37:31.7009021Z 10.2 YOUR USE OF THE SDK AND ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SDK IS AT YOUR OWN DISCRETION AND RISK AND YOU ARE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM SUCH USE.
+2026-10-02T14:37:31.7011062Z 
+2026-10-02T14:37:31.7012531Z 10.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+2026-10-02T14:37:31.7014127Z 
+2026-10-02T14:37:31.7014137Z 
+2026-10-02T14:37:31.7014351Z 11. LIMITATION OF LIABILITY
+2026-10-02T14:37:31.7014642Z 
+2026-10-02T14:37:31.7017108Z 11.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.
+2026-10-02T14:37:31.7019712Z 
+2026-10-02T14:37:31.7019723Z 
+2026-10-02T14:37:31.7019895Z 12. Indemnification
+2026-10-02T14:37:31.7020132Z 
+2026-10-02T14:37:31.7023441Z 12.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys fees) arising out of or accruing from (a) your use of the SDK, (b) any application you develop on the SDK that infringes any copyright, trademark, trade secret, trade dress, patent or other intellectual property right of any person or defames any person or violates their rights of publicity or privacy, and (c) any non-compliance by you with the License Agreement.
+2026-10-02T14:37:31.7025808Z 
+2026-10-02T14:37:31.7025814Z 
+2026-10-02T14:37:31.7025928Z 13. Changes to the License Agreement
+2026-10-02T14:37:31.7026121Z 
+2026-10-02T14:37:31.7027001Z 13.1 Google may make changes to the License Agreement as it distributes new versions of the SDK. When these changes are made, Google will make a new version of the License Agreement available on the website where the SDK is made available.
+2026-10-02T14:37:31.7027817Z 
+2026-10-02T14:37:31.7027824Z 
+2026-10-02T14:37:31.7027923Z 14. General Legal Terms
+2026-10-02T14:37:31.7028064Z 
+2026-10-02T14:37:31.7029007Z 14.1 The License Agreement constitutes the whole legal agreement between you and Google and governs your use of the SDK (excluding any services which Google may provide to you under a separate written agreement), and completely replaces any prior agreements between you and Google in relation to the SDK.
+2026-10-02T14:37:31.7030023Z 
+2026-10-02T14:37:31.7031334Z 14.2 You agree that if Google does not exercise or enforce any legal right or remedy which is contained in the License Agreement (or which Google has the benefit of under any applicable law), this will not be taken to be a formal waiver of Google's rights and that those rights or remedies will still be available to Google.
+2026-10-02T14:37:31.7032428Z 
+2026-10-02T14:37:31.7033512Z 14.3 If any court of law, having the jurisdiction to decide on this matter, rules that any provision of the License Agreement is invalid, then that provision will be removed from the License Agreement without affecting the rest of the License Agreement. The remaining provisions of the License Agreement will continue to be valid and enforceable.
+2026-10-02T14:37:31.7034657Z 
+2026-10-02T14:37:31.7036034Z 14.4 You acknowledge and agree that each member of the group of companies of which Google is the parent shall be third party beneficiaries to the License Agreement and that such other companies shall be entitled to directly enforce, and rely upon, any provision of the License Agreement that confers a benefit on (or rights in favor of) them. Other than this, no other person or company shall be third party beneficiaries to the License Agreement.
+2026-10-02T14:37:31.7037647Z 
+2026-10-02T14:37:31.7038467Z 14.5 EXPORT RESTRICTIONS. THE SDK IS SUBJECT TO UNITED STATES EXPORT LAWS AND REGULATIONS. YOU MUST COMPLY WITH ALL DOMESTIC AND INTERNATIONAL EXPORT LAWS AND REGULATIONS THAT APPLY TO THE SDK. THESE LAWS INCLUDE RESTRICTIONS ON DESTINATIONS, END USERS AND END USE.
+2026-10-02T14:37:31.7039362Z 
+2026-10-02T14:37:31.7040424Z 14.6 The rights granted in the License Agreement may not be assigned or transferred by either you or Google without the prior written approval of the other party. Neither you nor Google shall be permitted to delegate their responsibilities or obligations under the License Agreement without the prior written approval of the other party.
+2026-10-02T14:37:31.7041836Z 
+2026-10-02T14:37:31.7043606Z 14.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.
+2026-10-02T14:37:31.7045443Z 
+2026-10-02T14:37:31.7045448Z 
+2026-10-02T14:37:31.7045541Z January 16, 2019
+2026-10-02T14:37:31.7045760Z ---------------------------------------
+2026-10-02T14:37:31.7046025Z Accept? (y/N): 
+2026-10-02T14:37:31.7046264Z 4/6: License android-sdk-preview-license:
+2026-10-02T14:37:31.7046558Z ---------------------------------------
+2026-10-02T14:37:31.7048827Z To get started with the Android SDK Preview, you must agree to the following terms and conditions. As described below, please note that this is a preview version of the Android SDK, subject to change, that you use at your own risk. The Android SDK Preview is not a stable release, and may contain errors and defects that can result in serious damage to your computer systems, devices and data.
+2026-10-02T14:37:31.7051279Z 
+2026-10-02T14:37:31.7051662Z This is the Android SDK Preview License Agreement (the "License Agreement").
+2026-10-02T14:37:31.7052187Z 
+2026-10-02T14:37:31.7052349Z 1. Introduction
+2026-10-02T14:37:31.7052572Z 
+2026-10-02T14:37:31.7055736Z 1.1 The Android SDK Preview (referred to in the License Agreement as the “Preview” and specifically including the Android system files, packaged APIs, and Preview library files, if and when they are made available) is licensed to you subject to the terms of the License Agreement. The License Agreement forms a legally binding contract between you and Google in relation to your use of the Preview.
+2026-10-02T14:37:31.7058176Z 
+2026-10-02T14:37:31.7059331Z 1.2 "Android" means the Android software stack for devices, as made available under the Android Open Source Project, which is located at the following URL: http://source.android.com/, as updated from time to time.
+2026-10-02T14:37:31.7060886Z 
+2026-10-02T14:37:31.7061772Z 1.3 "Google" means Google Inc., a Delaware corporation with principal place of business at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
+2026-10-02T14:37:31.7062858Z 
+2026-10-02T14:37:31.7063061Z 2. Accepting the License Agreement
+2026-10-02T14:37:31.7063398Z 
+2026-10-02T14:37:31.7064153Z 2.1 In order to use the Preview, you must first agree to the License Agreement. You may not use the Preview if you do not accept the License Agreement.
+2026-10-02T14:37:31.7065058Z 
+2026-10-02T14:37:31.7065563Z 2.2 By clicking to accept and/or using the Preview, you hereby agree to the terms of the License Agreement.
+2026-10-02T14:37:31.7066250Z 
+2026-10-02T14:37:31.7067645Z 2.3 You may not use the Preview and may not accept the License Agreement if you are a person barred from receiving the Preview under the laws of the United States or other countries including the country in which you are resident or from which you use the Preview.
+2026-10-02T14:37:31.7069611Z 
+2026-10-02T14:37:31.7072432Z 2.4 If you will use the Preview internally within your company or organization you agree to be bound by the License Agreement on behalf of your employer or other entity, and you represent and warrant that you have full legal authority to bind your employer or such entity to the License Agreement. If you do not have the requisite authority, you may not accept the License Agreement or use the Preview on behalf of your employer or other entity.
+2026-10-02T14:37:31.7075117Z 
+2026-10-02T14:37:31.7075322Z 3. Preview License from Google
+2026-10-02T14:37:31.7075638Z 
+2026-10-02T14:37:31.7077528Z 3.1 Subject to the terms of the License Agreement, Google grants you a royalty-free, non-assignable, non-exclusive, non-sublicensable, limited, revocable license to use the Preview, personally or internally within your company or organization, solely to develop applications to run on the Android platform.
+2026-10-02T14:37:31.7079433Z 
+2026-10-02T14:37:31.7081996Z 3.2 You agree that Google or third parties owns all legal right, title and interest in and to the Preview, including any Intellectual Property Rights that subsist in the Preview. "Intellectual Property Rights" means any and all rights under patent law, copyright law, trade secret law, trademark law, and any and all other proprietary rights. Google reserves all rights not expressly granted to you.
+2026-10-02T14:37:31.7084663Z 
+2026-10-02T14:37:31.7088077Z 3.3 You may not use the Preview for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not: (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the Preview or any part of the Preview; or (b) load any part of the Preview onto a mobile handset or any other hardware device except a personal computer, combine any part of the Preview with other software, or distribute any software or device incorporating a part of the Preview.
+2026-10-02T14:37:31.7091750Z 
+2026-10-02T14:37:31.7093312Z 3.4 You agree that you will not take any actions that may cause or result in the fragmentation of Android, including but not limited to distributing, participating in the creation of, or promoting in any way a software development kit derived from the Preview.
+2026-10-02T14:37:31.7094872Z 
+2026-10-02T14:37:31.7097232Z 3.5 Use, reproduction and distribution of components of the Preview licensed under an open source software license are governed solely by the terms of that open source software license and not the License Agreement. You agree to remain a licensee in good standing in regard to such open source software licenses under all the rights granted and to refrain from any actions that may terminate, suspend, or breach such rights.
+2026-10-02T14:37:31.7099732Z 
+2026-10-02T14:37:31.7102391Z 3.6 You agree that the form and nature of the Preview that Google provides may change without prior notice to you and that future versions of the Preview may be incompatible with applications developed on previous versions of the Preview. You agree that Google may stop (permanently or temporarily) providing the Preview (or any features within the Preview) to you or to users generally at Google's sole discretion, without prior notice to you.
+2026-10-02T14:37:31.7105029Z 
+2026-10-02T14:37:31.7105918Z 3.7 Nothing in the License Agreement gives you a right to use any of Google's trade names, trademarks, service marks, logos, domain names, or other distinctive brand features.
+2026-10-02T14:37:31.7106970Z 
+2026-10-02T14:37:31.7107964Z 3.8 You agree that you will not remove, obscure, or alter any proprietary rights notices (including copyright and trademark notices) that may be affixed to or contained within the Preview.
+2026-10-02T14:37:31.7109113Z 
+2026-10-02T14:37:31.7109276Z 4. Use of the Preview by You
+2026-10-02T14:37:31.7109534Z 
+2026-10-02T14:37:31.7111517Z 4.1 Google agrees that nothing in the License Agreement gives Google any right, title or interest from you (or your licensors) under the License Agreement in or to any software applications that you develop using the Preview, including any intellectual property rights that subsist in those applications.
+2026-10-02T14:37:31.7113538Z 
+2026-10-02T14:37:31.7115526Z 4.2 You agree to use the Preview and write applications only for purposes that are permitted by (a) the License Agreement, and (b) any applicable law, regulation or generally accepted practices or guidelines in the relevant jurisdictions (including any laws regarding the export of data or software to and from the United States or other relevant countries).
+2026-10-02T14:37:31.7117657Z 
+2026-10-02T14:37:31.7121925Z 4.3 You agree that if you use the Preview to develop applications, you will protect the privacy and legal rights of users. If users provide you with user names, passwords, or other login information or personal information, you must make the users aware that the information will be available to your application, and you must provide legally adequate privacy notice and protection for those users. If your application stores personal or sensitive information provided by users, it must do so securely. If users provide you with Google Account information, your application may only use that information to access the user's Google Account when, and for the limited purposes for which, each user has given you permission to do so.
+2026-10-02T14:37:31.7126111Z 
+2026-10-02T14:37:31.7127744Z 4.4 You agree that you will not engage in any activity with the Preview, including the development or distribution of an application, that interferes with, disrupts, damages, or accesses in an unauthorized manner the servers, networks, or other properties or services of Google or any third party.
+2026-10-02T14:37:31.7129522Z 
+2026-10-02T14:37:31.7131820Z 4.5 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any data, content, or resources that you create, transmit or display through Android and/or applications for Android, and for the consequences of your actions (including any loss or damage which Google may suffer) by doing so.
+2026-10-02T14:37:31.7133926Z 
+2026-10-02T14:37:31.7136082Z 4.6 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any breach of your obligations under the License Agreement, any applicable third party contract or Terms of Service, or any applicable law or regulation, and for the consequences (including any loss or damage which Google or any third party may suffer) of any such breach.
+2026-10-02T14:37:31.7138411Z 
+2026-10-02T14:37:31.7141319Z 4.7 The Preview is in development, and your testing and feedback are an important part of the development process. By using the Preview, you acknowledge that implementation of some features are still under development and that you should not rely on the Preview having the full functionality of a stable release. You agree not to publicly distribute or ship any application using this Preview as this Preview will no longer be supported after the official Android SDK is released.
+2026-10-02T14:37:31.7144188Z 
+2026-10-02T14:37:31.7144364Z 5. Your Developer Credentials
+2026-10-02T14:37:31.7144733Z 
+2026-10-02T14:37:31.7146522Z 5.1 You agree that you are responsible for maintaining the confidentiality of any developer credentials that may be issued to you by Google or which you may choose yourself and that you will be solely responsible for all applications that are developed under your developer credentials.
+2026-10-02T14:37:31.7148409Z 
+2026-10-02T14:37:31.7148581Z 6. Privacy and Information
+2026-10-02T14:37:31.7148823Z 
+2026-10-02T14:37:31.7151855Z 6.1 In order to continually innovate and improve the Preview, Google may collect certain usage statistics from the software including but not limited to a unique identifier, associated IP address, version number of the software, and information on which tools and/or services in the Preview are being used and how they are being used. Before any of this information is collected, the Preview will notify you and seek your consent. If you withhold consent, the information will not be collected.
+2026-10-02T14:37:31.7154955Z 
+2026-10-02T14:37:31.7155973Z 6.2 The data collected is examined in the aggregate to improve the Preview and is maintained in accordance with Google's Privacy Policy located at http://www.google.com/policies/privacy/.
+2026-10-02T14:37:31.7157145Z 
+2026-10-02T14:37:31.7157308Z 7. Third Party Applications
+2026-10-02T14:37:31.7157558Z 
+2026-10-02T14:37:31.7161137Z 7.1 If you use the Preview to run applications developed by a third party or that access data, content or resources provided by a third party, you agree that Google is not responsible for those applications, data, content, or resources. You understand that all data, content or resources which you may access through such third party applications are the sole responsibility of the person from which they originated and that Google is not liable for any loss or damage that you may experience as a result of the use or access of any of those third party applications, data, content, or resources.
+2026-10-02T14:37:31.7164593Z 
+2026-10-02T14:37:31.7167292Z 7.2 You should be aware the data, content, and resources presented to you through such a third party application may be protected by intellectual property rights which are owned by the providers (or by other persons or companies on their behalf). You may not modify, rent, lease, loan, sell, distribute or create derivative works based on these data, content, or resources (either in whole or in part) unless you have been specifically given permission to do so by the relevant owners.
+2026-10-02T14:37:31.7170131Z 
+2026-10-02T14:37:31.7171200Z 7.3 You acknowledge that your use of such third party applications, data, content, or resources may be subject to separate terms between you and the relevant third party.
+2026-10-02T14:37:31.7172252Z 
+2026-10-02T14:37:31.7172396Z 8. Using Google APIs
+2026-10-02T14:37:31.7172626Z 
+2026-10-02T14:37:31.7172757Z 8.1 Google APIs
+2026-10-02T14:37:31.7172950Z 
+2026-10-02T14:37:31.7175845Z 8.1.1 If you use any API to retrieve data from Google, you acknowledge that the data may be protected by intellectual property rights which are owned by Google or those parties that provide the data (or by other persons or companies on their behalf). Your use of any such API may be subject to additional Terms of Service. You may not modify, rent, lease, loan, sell, distribute or create derivative works based on this data (either in whole or in part) unless allowed by the relevant Terms of Service.
+2026-10-02T14:37:31.7178715Z 
+2026-10-02T14:37:31.7180050Z 8.1.2 If you use any API to retrieve a user's data from Google, you acknowledge and agree that you shall retrieve data only with the user's explicit consent and only when, and for the limited purposes for which, the user has given you permission to do so.
+2026-10-02T14:37:31.7181730Z 
+2026-10-02T14:37:31.7181903Z 9. Terminating the License Agreement
+2026-10-02T14:37:31.7182213Z 
+2026-10-02T14:37:31.7182739Z 9.1 the License Agreement will continue to apply until terminated by either you or Google as set out below.
+2026-10-02T14:37:31.7183437Z 
+2026-10-02T14:37:31.7184212Z 9.2 If you want to terminate the License Agreement, you may do so by ceasing your use of the Preview and any relevant developer credentials.
+2026-10-02T14:37:31.7185005Z 
+2026-10-02T14:37:31.7185509Z 9.3 Google may at any time, terminate the License Agreement, with or without cause, upon notice to you.
+2026-10-02T14:37:31.7186174Z 
+2026-10-02T14:37:31.7187884Z 9.4 The License Agreement will automatically terminate without notice or other action upon the earlier of: (A) when Google ceases to provide the Preview or certain parts of the Preview to users in the country in which you are resident or from which you use the service; and (B) Google issues a final release version of the Android SDK.
+2026-10-02T14:37:31.7189802Z 
+2026-10-02T14:37:31.7192726Z 9.5 When the License Agreement is terminated, the license granted to you in the License Agreement will terminate, you will immediately cease all use of the Preview, and the provisions of paragraphs 10, 11, 12 and 14 shall survive indefinitely.
+2026-10-02T14:37:31.7194623Z 
+2026-10-02T14:37:31.7194821Z 10. DISCLAIMERS
+2026-10-02T14:37:31.7195061Z 
+2026-10-02T14:37:31.7196082Z 10.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE PREVIEW IS AT YOUR SOLE RISK AND THAT THE PREVIEW IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.
+2026-10-02T14:37:31.7197203Z 
+2026-10-02T14:37:31.7200511Z 10.2 YOUR USE OF THE PREVIEW AND ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE PREVIEW IS AT YOUR OWN DISCRETION AND RISK AND YOU ARE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM SUCH USE. WITHOUT LIMITING THE FOREGOING, YOU UNDERSTAND THAT THE PREVIEW IS NOT A STABLE RELEASE AND MAY CONTAIN ERRORS, DEFECTS AND SECURITY VULNERABILITIES THAT CAN RESULT IN SIGNIFICANT DAMAGE, INCLUDING THE COMPLETE, IRRECOVERABLE LOSS OF USE OF YOUR COMPUTER SYSTEM OR OTHER DEVICE.
+2026-10-02T14:37:31.7204127Z 
+2026-10-02T14:37:31.7205630Z 10.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+2026-10-02T14:37:31.7207410Z 
+2026-10-02T14:37:31.7207675Z 11. LIMITATION OF LIABILITY
+2026-10-02T14:37:31.7208049Z 
+2026-10-02T14:37:31.7210580Z 11.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.
+2026-10-02T14:37:31.7213374Z 
+2026-10-02T14:37:31.7213529Z 12. Indemnification
+2026-10-02T14:37:31.7213975Z 
+2026-10-02T14:37:31.7218706Z 12.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys’ fees) arising out of or accruing from (a) your use of the Preview, (b) any application you develop on the Preview that infringes any Intellectual Property Rights of any person or defames any person or violates their rights of publicity or privacy, and (c) any non-compliance by you of the License Agreement.
+2026-10-02T14:37:31.7222815Z 
+2026-10-02T14:37:31.7222992Z 13. Changes to the License Agreement
+2026-10-02T14:37:31.7223369Z 
+2026-10-02T14:37:31.7225179Z 13.1 Google may make changes to the License Agreement as it distributes new versions of the Preview. When these changes are made, Google will make a new version of the License Agreement available on the website where the Preview is made available.
+2026-10-02T14:37:31.7226667Z 
+2026-10-02T14:37:31.7226824Z 14. General Legal Terms
+2026-10-02T14:37:31.7227056Z 
+2026-10-02T14:37:31.7228817Z 14.1 the License Agreement constitutes the whole legal agreement between you and Google and governs your use of the Preview (excluding any services which Google may provide to you under a separate written agreement), and completely replaces any prior agreements between you and Google in relation to the Preview.
+2026-10-02T14:37:31.7231000Z 
+2026-10-02T14:37:31.7232740Z 14.2 You agree that if Google does not exercise or enforce any legal right or remedy which is contained in the License Agreement (or which Google has the benefit of under any applicable law), this will not be taken to be a formal waiver of Google's rights and that those rights or remedies will still be available to Google.
+2026-10-02T14:37:31.7234800Z 
+2026-10-02T14:37:31.7236715Z 14.3 If any court of law, having the jurisdiction to decide on this matter, rules that any provision of the License Agreement is invalid, then that provision will be removed from the License Agreement without affecting the rest of the License Agreement. The remaining provisions of the License Agreement will continue to be valid and enforceable.
+2026-10-02T14:37:31.7238777Z 
+2026-10-02T14:37:31.7241468Z 14.4 You acknowledge and agree that each member of the group of companies of which Google is the parent shall be third party beneficiaries to the License Agreement and that such other companies shall be entitled to directly enforce, and rely upon, any provision of the License Agreement that confers a benefit on (or rights in favor of) them. Other than this, no other person or company shall be third party beneficiaries to the License Agreement.
+2026-10-02T14:37:31.7244089Z 
+2026-10-02T14:37:31.7245725Z 14.5 EXPORT RESTRICTIONS. THE PREVIEW IS SUBJECT TO UNITED STATES EXPORT LAWS AND REGULATIONS. YOU MUST COMPLY WITH ALL DOMESTIC AND INTERNATIONAL EXPORT LAWS AND REGULATIONS THAT APPLY TO THE PREVIEW. THESE LAWS INCLUDE RESTRICTIONS ON DESTINATIONS, END USERS AND END USE.
+2026-10-02T14:37:31.7247458Z 
+2026-10-02T14:37:31.7249288Z 14.6 The License Agreement may not be assigned or transferred by you without the prior written approval of Google, and any attempted assignment without such approval will be void. You shall not delegate your responsibilities or obligations under the License Agreement without the prior written approval of Google.
+2026-10-02T14:37:31.7251472Z 
+2026-10-02T14:37:31.7255037Z 14.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.
+2026-10-02T14:37:31.7258504Z 
+2026-10-02T14:37:31.7258642Z June 2014.
+2026-10-02T14:37:31.7258975Z ---------------------------------------
+2026-10-02T14:37:31.7259403Z Accept? (y/N): 
+2026-10-02T14:37:31.7259756Z 5/6: License google-gdk-license:
+2026-10-02T14:37:31.7260252Z ---------------------------------------
+2026-10-02T14:37:31.7261039Z This is a Developer Preview of the GDK that is subject to change.
+2026-10-02T14:37:31.7261503Z 
+2026-10-02T14:37:31.7261668Z Terms and Conditions
+2026-10-02T14:37:31.7261888Z 
+2026-10-02T14:37:31.7262101Z This is the Glass Development Kit License Agreement.
+2026-10-02T14:37:31.7262462Z 
+2026-10-02T14:37:31.7262598Z 1. Introduction
+2026-10-02T14:37:31.7262797Z 
+2026-10-02T14:37:31.7264981Z 1.1 The Glass Development Kit (referred to in this License Agreement as the "GDK" and specifically including the Android system files, packaged APIs, and GDK library files, if and when they are made available) is licensed to you subject to the terms of this License Agreement. This License Agreement forms a legally binding contract between you and Google in relation to your use of the GDK.
+2026-10-02T14:37:31.7267396Z 
+2026-10-02T14:37:31.7267810Z 1.2 "Glass" means Glass devices and the Glass software stack for use on Glass devices.
+2026-10-02T14:37:31.7268376Z 
+2026-10-02T14:37:31.7268386Z 
+2026-10-02T14:37:31.7269625Z 1.3 "Android" means the Android software stack for devices, as made available under the Android Open Source Project, which is located at the following URL: http://source.android.com/, as updated from time to time.
+2026-10-02T14:37:31.7271274Z 
+2026-10-02T14:37:31.7272104Z 1.4 "Google" means Google Inc., a Delaware corporation with principal place of business at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
+2026-10-02T14:37:31.7273084Z 
+2026-10-02T14:37:31.7273258Z 2. Accepting this License Agreement
+2026-10-02T14:37:31.7273755Z 
+2026-10-02T14:37:31.7274456Z 2.1 In order to use the GDK, you must first agree to this License Agreement. You may not use the GDK if you do not accept this License Agreement.
+2026-10-02T14:37:31.7275343Z 
+2026-10-02T14:37:31.7275719Z 2.2 By clicking to accept, you hereby agree to the terms of this License Agreement.
+2026-10-02T14:37:31.7276279Z 
+2026-10-02T14:37:31.7277593Z 2.3 You may not use the GDK and may not accept the License Agreement if you are a person barred from receiving the GDK under the laws of the United States or other countries including the country in which you are resident or from which you use the GDK.
+2026-10-02T14:37:31.7279097Z 
+2026-10-02T14:37:31.7281364Z 2.4 If you are agreeing to be bound by this License Agreement on behalf of your employer or other entity, you represent and warrant that you have full legal authority to bind your employer or such entity to this License Agreement. If you do not have the requisite authority, you may not accept the License Agreement or use the GDK on behalf of your employer or other entity.
+2026-10-02T14:37:31.7283535Z 
+2026-10-02T14:37:31.7283701Z 3. GDK License from Google
+2026-10-02T14:37:31.7283943Z 
+2026-10-02T14:37:31.7285308Z 3.1 Subject to the terms of this License Agreement, Google grants you a limited, worldwide, royalty-free, non-assignable and non-exclusive license to use the GDK solely to develop applications to run on the Glass platform for Glass devices.
+2026-10-02T14:37:31.7286805Z 
+2026-10-02T14:37:31.7288946Z 3.2 You agree that Google or third parties own all legal right, title and interest in and to the GDK, including any Intellectual Property Rights that subsist in the GDK. "Intellectual Property Rights" means any and all rights under patent law, copyright law, trade secret law, trademark law, and any and all other proprietary rights. Google reserves all rights not expressly granted to you.
+2026-10-02T14:37:31.7292066Z 
+2026-10-02T14:37:31.7295772Z 3.3 You may not use the GDK for any purpose not expressly permitted by this License Agreement. Except to the extent required by applicable third party licenses, you may not: (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the GDK or any part of the GDK; or (b) load any part of the GDK onto a mobile handset or wearable computing device or any other hardware device except a Glass device personal computer, combine any part of the GDK with other software, or distribute any software or device incorporating a part of the GDK.
+2026-10-02T14:37:31.7299385Z 
+2026-10-02T14:37:31.7300961Z 3.4 You agree that you will not take any actions that may cause or result in the fragmentation of Glass, including but not limited to distributing, participating in the creation of, or promoting in any way a software development kit derived from the GDK.
+2026-10-02T14:37:31.7302555Z 
+2026-10-02T14:37:31.7303939Z 3.5 Use, reproduction and distribution of components of the GDK licensed under an open source software license are governed solely by the terms of that open source software license and not this License Agreement.
+2026-10-02T14:37:31.7305441Z 
+2026-10-02T14:37:31.7308066Z 3.6 You agree that the form and nature of the GDK that Google provides may change without prior notice to you and that future versions of the GDK may be incompatible with applications developed on previous versions of the GDK. You agree that Google may stop (permanently or temporarily) providing the GDK (or any features within the GDK) to you or to users generally at Google's sole discretion, without prior notice to you.
+2026-10-02T14:37:31.7310619Z 
+2026-10-02T14:37:31.7311723Z 3.7 Nothing in this License Agreement gives you a right to use any of Google's trade names, trademarks, service marks, logos, domain names, or other distinctive brand features.
+2026-10-02T14:37:31.7312779Z 
+2026-10-02T14:37:31.7313755Z 3.8 You agree that you will not remove, obscure, or alter any proprietary rights notices (including copyright and trademark notices) that may be affixed to or contained within the GDK.
+2026-10-02T14:37:31.7315091Z 
+2026-10-02T14:37:31.7315107Z 
+2026-10-02T14:37:31.7317108Z 3.9 Your use of any Android system files, packaged APIs, or other components of the GDK which are part of the Android Software Development Kit is subject to the terms of the Android Software Development Kit License Agreement located at http://developer.android.com/sdk/terms.html. These terms are hereby incorporated by reference into this License Agreement.
+2026-10-02T14:37:31.7319305Z 
+2026-10-02T14:37:31.7319455Z 4. Use of the GDK by You
+2026-10-02T14:37:31.7319699Z 
+2026-10-02T14:37:31.7321417Z 4.1 Google agrees that it obtains no right, title or interest from you (or your licensors) under this License Agreement in or to any software applications that you develop using the GDK, including any intellectual property rights that subsist in those applications.
+2026-10-02T14:37:31.7323025Z 
+2026-10-02T14:37:31.7326035Z 4.2 You agree to use the GDK and write applications only for purposes that are permitted by (a) this License Agreement, (b) the Glass Platform Developer Policies (located at https://developers.google.com/glass/policies, and hereby incorporated into this License Agreement by reference), and (c) any applicable law, regulation or generally accepted practices or guidelines in the relevant jurisdictions (including any laws regarding the export of data or software to and from the United States or other relevant countries).
+2026-10-02T14:37:31.7329162Z 
+2026-10-02T14:37:31.7334226Z 4.3 You agree that if you use the GDK to develop applications for general public users, you will protect the privacy and legal rights of those users. If the users provide you with user names, passwords, or other login information or personal information, you must make the users aware that the information will be available to your application, and you must provide legally adequate privacy notice and protection for those users. If your application stores personal or sensitive information provided by users, it must do so securely. If the user provides your application with Google Account information, your application may only use that information to access the user's Google Account when, and for the limited purposes for which, the user has given you permission to do so.
+2026-10-02T14:37:31.7338785Z 
+2026-10-02T14:37:31.7340547Z 4.4 You agree that you will not engage in any activity with the GDK, including the development or distribution of an application, that interferes with, disrupts, damages, or accesses in an unauthorized manner the servers, networks, or other properties or services of any third party including, but not limited to, Google.
+2026-10-02T14:37:31.7342721Z 
+2026-10-02T14:37:31.7344595Z 4.5 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any data, content, or resources that you create, transmit or display through Glass and/or applications for Glass, and for the consequences of your actions (including any loss or damage which Google may suffer) by doing so.
+2026-10-02T14:37:31.7346606Z 
+2026-10-02T14:37:31.7348774Z 4.6 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any breach of your obligations under this License Agreement, any applicable third party contract or Terms of Service, or any applicable law or regulation, and for the consequences (including any loss or damage which Google or any third party may suffer) of any such breach.
+2026-10-02T14:37:31.7351308Z 
+2026-10-02T14:37:31.7351317Z 
+2026-10-02T14:37:31.7353388Z 4.7 The GDK is in development, and your testing and feedback are an important part of the development process. By using the GDK, you acknowledge that implementation of some features are still under development and that you should not rely on the GDK, Glass devices, Glass system software, Google Mirror API, or Glass services having the full functionality of a stable release.
+2026-10-02T14:37:31.7355601Z 
+2026-10-02T14:37:31.7355949Z 5. Your Developer Credentials
+2026-10-02T14:37:31.7356214Z 
+2026-10-02T14:37:31.7357792Z 5.1 You agree that you are responsible for maintaining the confidentiality of any developer credentials that may be issued to you by Google or which you may choose yourself and that you will be solely responsible for all applications that are developed under your developer credentials.
+2026-10-02T14:37:31.7359510Z 
+2026-10-02T14:37:31.7359664Z 6. Privacy and Information
+2026-10-02T14:37:31.7359978Z 
+2026-10-02T14:37:31.7359986Z 
+2026-10-02T14:37:31.7362826Z 6.1 In order to continually innovate and improve the GDK, Google may collect certain usage statistics from the software including but not limited to a unique identifier, associated IP address, version number of the software, and information on which tools and/or services in the GDK are being used and how they are being used. Before any of this information is collected, the GDK will notify you and seek your consent. If you withhold consent, the information will not be collected.
+2026-10-02T14:37:31.7365688Z 
+2026-10-02T14:37:31.7366448Z 6.2 The data collected is examined in the aggregate to improve the GDK and is maintained in accordance with Google's Privacy Policy.
+2026-10-02T14:37:31.7367230Z 
+2026-10-02T14:37:31.7367373Z 7. Third Party Applications
+2026-10-02T14:37:31.7367601Z 
+2026-10-02T14:37:31.7371144Z 7.1 If you use the GDK to run applications developed by a third party or that access data, content or resources provided by a third party, you agree that Google is not responsible for those applications, data, content, or resources. You understand that all data, content or resources which you may access through such third party applications are the sole responsibility of the person from which they originated and that Google is not liable for any loss or damage that you may experience as a result of the use or access of any of those third party applications, data, content, or resources.
+2026-10-02T14:37:31.7374448Z 
+2026-10-02T14:37:31.7377309Z 7.2 You should be aware the data, content, and resources presented to you through such a third party application may be protected by intellectual property rights which are owned by the providers (or by other persons or companies on their behalf). You may not modify, rent, lease, loan, sell, distribute or create derivative works based on these data, content, or resources (either in whole or in part) unless you have been specifically given permission to do so by the relevant owners.
+2026-10-02T14:37:31.7380103Z 
+2026-10-02T14:37:31.7381934Z 7.3 You acknowledge that your use of such third party applications, data, content, or resources may be subject to separate terms between you and the relevant third party. In that case, this License Agreement does not affect your legal relationship with these third parties.
+2026-10-02T14:37:31.7383574Z 
+2026-10-02T14:37:31.7383730Z 8. Using Google APIs
+2026-10-02T14:37:31.7383951Z 
+2026-10-02T14:37:31.7384091Z 8.1 Google APIs
+2026-10-02T14:37:31.7384281Z 
+2026-10-02T14:37:31.7386454Z 8.1.1 If you use any API to retrieve data from Google, you acknowledge that the data may be protected by intellectual property rights which are owned by Google or those parties that provide the data (or by other persons or companies on their behalf). Your use of any such API may be subject to additional Terms of Service. You may not modify, rent, lease, loan, sell, distribute or create derivative works based on this data (either in whole or in part) unless allowed by the relevant Terms of Service.
+2026-10-02T14:37:31.7389386Z 
+2026-10-02T14:37:31.7390954Z 8.1.2 If you use any API to retrieve a user's data from Google, you acknowledge and agree that you shall retrieve data only with the user's explicit consent and only when, and for the limited purposes for which, the user has given you permission to do so.
+2026-10-02T14:37:31.7392458Z 
+2026-10-02T14:37:31.7392656Z 9. Terminating this License Agreement
+2026-10-02T14:37:31.7392965Z 
+2026-10-02T14:37:31.7393513Z 9.1 This License Agreement will continue to apply until terminated by either you or Google as set out below.
+2026-10-02T14:37:31.7394487Z 
+2026-10-02T14:37:31.7395154Z 9.2 If you want to terminate this License Agreement, you may do so by ceasing your use of the GDK and any relevant developer credentials.
+2026-10-02T14:37:31.7395986Z 
+2026-10-02T14:37:31.7399364Z 9.3 Google may at any time, terminate this License Agreement with you if: (A) you have breached any provision of this License Agreement; or (B) Google is required to do so by law; or (C) the partner with whom Google offered certain parts of GDK (such as APIs) to you has terminated its relationship with Google or ceased to offer certain parts of the GDK to you; or (D) Google decides to no longer provide the GDK or certain parts of the GDK to users in the country in which you are resident or from which you use the service, or the provision of the GDK or certain GDK services to you by Google is, in Google's sole discretion, no longer commercially viable.
+2026-10-02T14:37:31.7402997Z 
+2026-10-02T14:37:31.7405454Z 9.4 When this License Agreement comes to an end, all of the legal rights, obligations and liabilities that you and Google have benefited from, been subject to (or which have accrued over time whilst this License Agreement has been in force) or which are expressed to continue indefinitely, shall be unaffected by this cessation, and the provisions of paragraph 14.7 shall continue to apply to such rights, obligations and liabilities indefinitely.
+2026-10-02T14:37:31.7408133Z 
+2026-10-02T14:37:31.7408390Z 10. DISCLAIMER OF WARRANTIES
+2026-10-02T14:37:31.7408731Z 
+2026-10-02T14:37:31.7409624Z 10.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE GDK IS AT YOUR SOLE RISK AND THAT THE GDK IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.
+2026-10-02T14:37:31.7410883Z 
+2026-10-02T14:37:31.7412567Z 10.2 YOUR USE OF THE GDK AND ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE GDK IS AT YOUR OWN DISCRETION AND RISK AND YOU ARE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM SUCH USE.
+2026-10-02T14:37:31.7414130Z 
+2026-10-02T14:37:31.7415549Z 10.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+2026-10-02T14:37:31.7417139Z 
+2026-10-02T14:37:31.7417320Z 11. LIMITATION OF LIABILITY
+2026-10-02T14:37:31.7417590Z 
+2026-10-02T14:37:31.7420017Z 11.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.
+2026-10-02T14:37:31.7422777Z 
+2026-10-02T14:37:31.7422948Z 12. Indemnification
+2026-10-02T14:37:31.7423187Z 
+2026-10-02T14:37:31.7427209Z 12.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys fees) arising out of or accruing from (a) your use of the GDK, (b) any application you develop on the GDK that infringes any copyright, trademark, trade secret, trade dress, patent or other intellectual property right of any person or defames any person or violates their rights of publicity or privacy, and (c) any non-compliance by you with this License Agreement.
+2026-10-02T14:37:31.7431504Z 
+2026-10-02T14:37:31.7431691Z 13. Changes to the License Agreement
+2026-10-02T14:37:31.7432010Z 
+2026-10-02T14:37:31.7433296Z 13.1 Google may make changes to the License Agreement as it distributes new versions of the GDK. When these changes are made, Google will make a new version of the License Agreement available on the website where the GDK is made available.
+2026-10-02T14:37:31.7434920Z 
+2026-10-02T14:37:31.7435085Z 14. General Legal Terms
+2026-10-02T14:37:31.7435338Z 
+2026-10-02T14:37:31.7437043Z 14.1 This License Agreement constitutes the whole legal agreement between you and Google and governs your use of the GDK (excluding any services which Google may provide to you under a separate written agreement), and completely replaces any prior agreements between you and Google in relation to the GDK.
+2026-10-02T14:37:31.7439090Z 
+2026-10-02T14:37:31.7441185Z 14.2 You agree that if Google does not exercise or enforce any legal right or remedy which is contained in this License Agreement (or which Google has the benefit of under any applicable law), this will not be taken to be a formal waiver of Google's rights and that those rights or remedies will still be available to Google.
+2026-10-02T14:37:31.7443336Z 
+2026-10-02T14:37:31.7445512Z 14.3 If any court of law, having the jurisdiction to decide on this matter, rules that any provision of this License Agreement is invalid, then that provision will be removed from this License Agreement without affecting the rest of this License Agreement. The remaining provisions of this License Agreement will continue to be valid and enforceable.
+2026-10-02T14:37:31.7447697Z 
+2026-10-02T14:37:31.7450167Z 14.4 You acknowledge and agree that each member of the group of companies of which Google is the parent shall be third party beneficiaries to this License Agreement and that such other companies shall be entitled to directly enforce, and rely upon, any provision of this License Agreement that confers a benefit on (or rights in favor of) them. Other than this, no other person or company shall be third party beneficiaries to this License Agreement.
+2026-10-02T14:37:31.7453017Z 
+2026-10-02T14:37:31.7454637Z 14.5 EXPORT RESTRICTIONS. THE GDK IS SUBJECT TO UNITED STATES EXPORT LAWS AND REGULATIONS. YOU MUST COMPLY WITH ALL DOMESTIC AND INTERNATIONAL EXPORT LAWS AND REGULATIONS THAT APPLY TO THE GDK. THESE LAWS INCLUDE RESTRICTIONS ON DESTINATIONS, END USERS AND END USE.
+2026-10-02T14:37:31.7456270Z 
+2026-10-02T14:37:31.7458176Z 14.6 The rights granted in this License Agreement may not be assigned or transferred by either you or Google without the prior written approval of the other party. Neither you nor Google shall be permitted to delegate their responsibilities or obligations under this License Agreement without the prior written approval of the other party.
+2026-10-02T14:37:31.7460291Z 
+2026-10-02T14:37:31.7463655Z 14.7 This License Agreement, and your relationship with Google under this License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from this License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.
+2026-10-02T14:37:31.7466938Z 
+2026-10-02T14:37:31.7467086Z November 19, 2013
+2026-10-02T14:37:31.7467434Z ---------------------------------------
+2026-10-02T14:37:31.7467860Z Accept? (y/N): 
+2026-10-02T14:37:31.7468243Z 6/6: License mips-android-sysimage-license:
+2026-10-02T14:37:31.7468724Z ---------------------------------------
+2026-10-02T14:37:31.7472703Z MIPS Technologies, Inc. (“MIPS”) Internal Evaluation License Agreement for MIPS Android™ System Images for Android Software Development Kit (SDK): This Internal Evaluation License Agreement (this "Agreement") is entered into by and between MIPS and you (as an individual developer or a legal entity -- identified below as “Recipient”). MIPS shall make the Evaluation Software available to Recipient as described in accordance with the terms and conditions set forth below.
+2026-10-02T14:37:31.7475734Z 
+2026-10-02T14:37:31.7479195Z By clicking on the “Accept” button, downloading, installing, or otherwise using the Evaluation Materials (defined below), you agree to be bound by the terms of this Agreement effective as of the date you click “Accept” (the “Effective Date”), and if doing so on behalf of an entity, you represent that you are authorized to bind the entity to the terms and conditions of this Agreement. If you do not agree to be bound by the terms and conditions of this Agreement, do not download, install, or use the Evaluation Materials.
+2026-10-02T14:37:31.7482366Z 
+2026-10-02T14:37:31.7482658Z 1. DEFINITIONS. These terms shall have the following meanings:
+2026-10-02T14:37:31.7483103Z 
+2026-10-02T14:37:31.7484094Z 1.1 “MIPS” shall mean MIPS Technologies, Inc., a Delaware corporation having a principal place of business at: 955 East Arques Ave., Sunnyvale, CA 94085
+2026-10-02T14:37:31.7485048Z 
+2026-10-02T14:37:31.7486056Z 1.2 “Evaluation Software” shall mean MIPS Android™ emulator system images for Android Software Development Kit (SDK), as made available to Recipient.
+2026-10-02T14:37:31.7487024Z 
+2026-10-02T14:37:31.7489132Z 1.3 “Evaluation Materials" means, collectively, the Evaluation Software (in source and/or object code form) and documentation (including, without limitation, any design documents, specifications, reference manuals, and other related materials) related to the Evaluation Software as made available to Recipient.
+2026-10-02T14:37:31.7491258Z 
+2026-10-02T14:37:31.7498207Z 1.4 “Open Source Software” means any software that requires (as a condition of use, modification and/or distribution of such software) that such software or other software incorporated into, derived from or distributed with such software (a) be disclosed or distributed in source code form; or (b) be licensed by the user to third parties for the purpose of making and/or distributing derivative works; or (c) be redistributable at no charge. Open Source Software includes, without limitation, software licensed or distributed under any of the following licenses or distribution models, or licenses or distribution models substantially similar to any of the following: (a) GNU’s General Public License (GPL) or Lesser/Library GPL (LGPL), (b) the Artistic License (e.g., PERL), (c) the Mozilla Public License, (d) the Netscape Public License, (e) the Sun Community Source License (SCSL), (f) the Sun Industry Source License (SISL), (g) the Apache Software license and (h) the Common Public License (CPL).
+2026-10-02T14:37:31.7504203Z 
+2026-10-02T14:37:31.7506206Z 1.5 “Pre-Release Materials” means “alpha” or “beta” designated pre-release features, which may not be fully functional, which MIPS may substantially modify in producing any production version of the Evaluation Materials, and/or which is still under development by MIPS and/or MIPS’ suppliers.
+2026-10-02T14:37:31.7508006Z 
+2026-10-02T14:37:31.7511533Z 2. PURPOSE. MIPS desires to make the Evaluation Materials available to Recipient solely for Recipient's internal evaluation of the Evaluation Software to evaluate the desirability of cooperating with MIPS in developing products that are compatible with the Evaluation Software and/or to advise MIPS as to possible modifications to the Evaluation Software. Recipient may not disclose, distribute, modify (except to facilitate the above-mentioned internal evaluation), or make commercial use of the Evaluation Materials or any modifications of the Evaluation Materials.
+2026-10-02T14:37:31.7515489Z 
+2026-10-02T14:37:31.7517969Z THE EVALUATION MATERIALS ARE PROVIDED FOR EVALUATION PURPOSES ONLY AND MAY NOT BE MODIFIED (EXCEPT TO FACILITATE THE INTERNAL EVALUATION) OR DISTRIBUTED BY RECIPIENT OR INCORPORATED INTO RECIPIENT’S PRODUCTS OR SOFTWARE. PLEASE CONTACT A MIPS SALES REPRESENTATIVE TO LEARN ABOUT THE AVAILABILITY AND COST OF A COMMERCIAL VERSION OF THE EVALUATION SOFTWARE.
+2026-10-02T14:37:31.7520165Z 
+2026-10-02T14:37:31.7521945Z 3. TITLE. Title to the Evaluation Materials remains with MIPS or its suppliers. Recipient shall not mortgage, pledge or encumber the Evaluation Materials in any way. Recipient shall return all Evaluation Materials, keeping no copies, upon termination or expiration of this Agreement.
+2026-10-02T14:37:31.7523871Z 
+2026-10-02T14:37:31.7530484Z 4. LICENSE. MIPS grants Recipient a royalty-free, personal, nontransferable, nonexclusive license under its copyrights to use the Evaluation Software only for the purposes described in paragraph 2 above and only for a period beginning on the Effective Date and extending to the first anniversary of the Effective Date (the “Evaluation Period”). Unless otherwise communicated in writing by MIPS to Recipient, to the extent the Evaluation Software is provided in more than one delivery or release (each, a “Release”) the license grant in this Section 4 and the Evaluation Period shall apply to each Release, in which case the Evaluation Period shall begin on the date that the Release is made generally available and continue to the first anniversary of such date. Recipient may not make modifications to the Evaluation Software. Recipient shall not disassemble, reverse-engineer, or decompile any software that is not provided to Recipient in source code form.
+2026-10-02T14:37:31.7536445Z 
+2026-10-02T14:37:31.7536454Z 
+2026-10-02T14:37:31.7538332Z EXCEPT AS PROVIDED HEREIN, NO OTHER LICENSE, EXPRESS OR IMPLIED, BY ESTOPPEL OR OTHERWISE, TO ANY OTHER MIPS INTELLECTUAL PROPERTY RIGHTS IS GRANTED TO THE RECIPIENT. OTHER THAN AS EXPLICITLY SET FORTH IN PARAGRAPH 2 ABOVE, NO RIGHT TO COPY, TO REPRODUCE, TO MODIFY, OR TO CREATE DERIVATIVE WORKS OF, THE EVALUATION MATERIALS IS GRANTED HEREIN.
+2026-10-02T14:37:31.7540365Z 
+2026-10-02T14:37:31.7542009Z 5. NO OBLIGATION. Recipient shall have no duty to purchase or license any product from MIPS. MIPS and its suppliers shall have no obligation to provide support for, or develop a non-evaluation version of, the Evaluation Software or to license any version of it.
+2026-10-02T14:37:31.7543575Z 
+2026-10-02T14:37:31.7550423Z 6. MODIFICATIONS. This Agreement does not obligate Recipient to provide MIPS with comments or suggestions regarding Evaluation Materials. However, should Recipient provide MIPS with comments or suggestions for the modification, correction, improvement or enhancement of (a) the Evaluation Materials or (b) MIPS products or processes which may embody the Evaluation Materials, then Recipient agrees to grant and hereby grants to MIPS a non-exclusive, irrevocable, worldwide, fully paid-up, royalty-free license, with the right to sublicense MIPS’ licensees and customers, under Recipient’s Intellectual property rights, to use and disclose such comments and suggestions in any manner MIPS chooses and to display, perform, copy, make, have made, use, sell, offer to sell, import, and otherwise dispose of MIPS’ and its sublicensee’s products embodying such comments and suggestions in any manner and via any media MIPS chooses, without reference to the source.
+2026-10-02T14:37:31.7556973Z 
+2026-10-02T14:37:31.7560137Z 7. WARRANTY DISCLAIMER. MIPS AND ITS SUPPLIERS MAKE NO WARRANTIES WITH RESPECT TO EVALUATION MATERIALS, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ANY IMPLIED WARRANTY OF NONINFRINGEMENT WITH RESPECT TO THIRD PARTY INTELLECTUAL PROPERTY. RECIPIENT ACKNOWLEDGES AND AGREES THAT THE EVALUATION MATERIALS ARE PROVIDED “AS IS,” WITHOUT WARRANTY OF ANY KIND.
+2026-10-02T14:37:31.7562968Z 
+2026-10-02T14:37:31.7566115Z 8. LIMITATION OF LIABILITY. MIPS AND ITS SUPPLIERS SHALL NOT BE LIABLE FOR ANY PROPERTY DAMAGE, PERSONAL INJURY, LOSS OF PROFITS, INTERRUPTION OF BUSINESS OR FOR ANY DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL OR INCIDENTAL DAMAGES, HOWEVER CAUSED OR ALLEGED, WHETHER FOR BREACH OF WARRANTY, CONTRACT, STRICT LIABILITY OR OTHERWISE, INCLUDING WITHOUT LIMITATION, UNDER TORT OR OTHER LEGAL THEORY. MIPS AND ITS SUPPLIERS DISCLAIM ANY AND ALL LIABILITY, INCLUDING LIABILITY FOR INFRINGEMENT OF ANY INTELLECTUAL PROPERTY RIGHTS OF ANY KIND RELATING TO THE EVALUATION MATERIALS.
+2026-10-02T14:37:31.7569829Z 
+2026-10-02T14:37:31.7571247Z 9. EXPIRATION. MIPS may terminate this Agreement immediately after a breach by Recipient or otherwise at MIPS’ reasonable discretion and upon five (5) business days’ notice to Recipient.
+2026-10-02T14:37:31.7572452Z 
+2026-10-02T14:37:31.7572605Z 10. GENERAL.
+2026-10-02T14:37:31.7572808Z 
+2026-10-02T14:37:31.7579211Z 10.1 Controlling Law. This Agreement shall be governed by California law excluding its choice of law rules. With the exception of MIPS’ rights to enforce its intellectual property rights and any confidentiality obligations under this Agreement or any licenses distributed with the Evaluation Materials, all disputes and any claims arising under or relating to this Agreement shall be subject to the exclusive jurisdiction and venue of the state and federal courts located in Santa Clara County, California. Each party hereby agrees to jurisdiction and venue in the courts set forth in the preceding sentence. The parties agree that the United Nations Convention on Contracts for the International Sale of Goods is specifically excluded from application to this Agreement. The parties consent to the personal jurisdiction of the above courts.
+2026-10-02T14:37:31.7584378Z 
+2026-10-02T14:37:31.7587197Z 10.2 Remedies. Recipient acknowledges and agrees that any breach of confidentiality obligations under this Agreement or any licenses distributed with the Evaluation Materials, as well as any disclosure, commercialization, or public use of the Evaluation Materials, would cause irreparable injury to MIPS, and therefore Recipient agrees to consent to, and hereby consents to, the grant of an injunction by any court of competent jurisdiction in the event of an actual or threatened breach.
+2026-10-02T14:37:31.7590155Z 
+2026-10-02T14:37:31.7594294Z 10.3 Assignment. Recipient may not delegate, assign or transfer this Agreement, the license granted or any of Recipient’s rights, obligations, or duties hereunder, expressly, by implication, by operation of law, by way of merger (regardless of whether Recipient is the surviving entity) or acquisition, or otherwise and any attempt to do so, without MIPS’ express prior written consent, shall be ineffective, null and void. MIPS may freely assign this Agreement, and its rights and obligations hereunder, in its sole discretion.
+2026-10-02T14:37:31.7597393Z 
+2026-10-02T14:37:31.7600027Z 10.4 Entire Agreement. This Agreement constitutes the entire agreement between Recipient and MIPS and supersedes in their entirety any and all oral or written agreements previously existing between Recipient and MIPS with respect to the subject matter hereof. This Agreement may only be amended or supplemented by a writing that refers explicitly to this Agreement and that is signed or otherwise accepted by duly authorized representatives of Recipient and MIPS.
+2026-10-02T14:37:31.7603795Z 
+2026-10-02T14:37:31.7606478Z 10.5 Severability. In the event that any provision of this Agreement is finally adjudicated to be unenforceable or invalid under any applicable law, such unenforceability or invalidity shall not render this Agreement unenforceable or invalid as a whole, and, in such event, such unenforceable or invalid provision shall be interpreted so as to best accomplish the objectives of such provision within the limits of applicable law or applicable court decisions.
+2026-10-02T14:37:31.7609220Z 
+2026-10-02T14:37:31.7617240Z 10.6 Export Regulations / Export Control. Recipient shall not export, either directly or indirectly, any product, service or technical data or system incorporating the Evaluation Materials without first obtaining any required license or other necessary approval from the U.S. Department of Commerce or any other governing agency or department of the United States Government. In the event any product is exported from the United States or re-exported from a foreign destination by Recipient, Recipient shall ensure that the distribution and export/re-export or import of the product is in compliance with all applicable laws, regulations, orders, or other restrictions of the U.S. Export Administration Regulations and the appropriate foreign government. Recipient agrees that neither it nor any of its subsidiaries will export/re-export any technical data, process, product, or service, directly or indirectly, to any country for which the United States government or any agency thereof or the foreign government from where it is shipping requires an export license, or other governmental approval, without first obtaining such license or approval. Recipient also agrees to implement measures to ensure that foreign national employees are authorized to receive any information controlled by U.S. export control laws. An export is "deemed" to take place when information is released to a foreign national wherever located.
+2026-10-02T14:37:31.7626598Z 
+2026-10-02T14:37:31.7632628Z 10.7 Special Terms for Pre-Release Materials. If so indicated in the description of the Evaluation Software, the Evaluation Software may contain Pre-Release Materials. Recipient hereby understands, acknowledges and agrees that: (i) Pre-Release Materials may not be fully tested and may contain bugs or errors; (ii) Pre-Release materials are not suitable for commercial release in their current state; (iii) regulatory approvals for Pre-Release Materials (such as UL or FCC) have not been obtained, and Pre-Release Materials may therefore not be certified for use in certain countries or environments or may not be suitable for certain applications and (iv) MIPS can provide no assurance that it will ever produce or make generally available a production version of the Pre-Release Materials . MIPS is not under any obligation to develop and/or release or offer for sale or license a final product based upon the Pre-Release Materials and may unilaterally elect to abandon the Pre-Release Materials or any such development platform at any time and without any obligation or liability whatsoever to Recipient or any other person.
+2026-10-02T14:37:31.7636573Z 
+2026-10-02T14:37:31.7637590Z ANY PRE-RELEASE MATERIALS ARE NON-QUALIFIED AND, AS SUCH, ARE PROVIDED “AS IS” AND “AS AVAILABLE”, POSSIBLY WITH FAULTS, AND WITHOUT REPRESENTATION OR WARRANTY OF ANY KIND.
+2026-10-02T14:37:31.7638237Z 
+2026-10-02T14:37:31.7641655Z 10.8 Open Source Software. In the event Open Source software is included with Evaluation Software, such Open Source software is licensed pursuant to the applicable Open Source software license agreement identified in the Open Source software comments in the applicable source code file(s) and/or file header as indicated in the Evaluation Software. Additional detail may be available (where applicable) in the accompanying on-line documentation. With respect to the Open Source software, nothing in this Agreement limits any rights under, or grants rights that supersede, the terms of any applicable Open Source software license agreement.
+2026-10-02T14:37:31.7644193Z ---------------------------------------
+2026-10-02T14:37:31.7644561Z Accept? (y/N): All SDK package licenses accepted
+2026-10-02T14:37:31.7644802Z 
+2026-10-02T14:37:31.7645062Z [command]/usr/local/lib/android/sdk/cmdline-tools/22.0/bin/sdkmanager platform-tools
+2026-10-02T14:37:31.7882997Z WARNING: The SDK Manager CLI tool (sdkmanager) is deprecated. Use Android CLI instead.
+2026-10-02T14:37:31.7912059Z The 'android' binary can also be found in the cmdline-tools directory, and 'android sdk' is the replacement for 'sdkmanager'.
+2026-10-02T14:37:31.7913252Z To learn more about the Android CLI and how to use it, see the documentation (https://d.android.com/tools/agents/android-cli)
+2026-10-02T14:37:31.7918716Z 
+2026-10-02T14:37:32.5911552Z Loading package information...                                                  
+2026-10-02T14:37:32.6932131Z Loading local repository...                                                     
+2026-10-02T14:37:32.6932727Z [                                       ] 3% Loading local repository...        
+2026-10-02T14:37:32.7046193Z [                                       ] 3% Fetch remote repository...         
+2026-10-02T14:37:33.0615181Z [=                                      ] 3% Fetch remote repository...         
+2026-10-02T14:37:33.1434033Z [=                                      ] 4% Fetch remote repository...         
+2026-10-02T14:37:33.1880216Z [=                                      ] 5% Fetch remote repository...         
+2026-10-02T14:37:33.2525018Z [==                                     ] 5% Fetch remote repository...         
+2026-10-02T14:37:33.3201923Z [==                                     ] 6% Fetch remote repository...         
+2026-10-02T14:37:33.4522185Z [==                                     ] 7% Fetch remote repository...         
+2026-10-02T14:37:33.4551523Z [==                                     ] 7% Computing updates...               
+2026-10-02T14:37:33.4791975Z [===                                    ] 8% Computing updates...               
+2026-10-02T14:37:33.6795138Z [===                                    ] 10% Computing updates...              
+2026-10-02T14:37:33.6799367Z [=======================================] 100% Computing updates...             
+2026-10-02T14:37:33.6807623Z 
+2026-10-02T14:37:34.0271272Z [command]/usr/local/lib/android/sdk/cmdline-tools/22.0/bin/sdkmanager platforms;android-34
+2026-10-02T14:37:34.3322662Z WARNING: The SDK Manager CLI tool (sdkmanager) is deprecated. Use Android CLI instead.
+2026-10-02T14:37:34.3342471Z The 'android' binary can also be found in the cmdline-tools directory, and 'android sdk' is the replacement for 'sdkmanager'.
+2026-10-02T14:37:34.3372238Z To learn more about the Android CLI and how to use it, see the documentation (https://d.android.com/tools/agents/android-cli)
+2026-10-02T14:37:34.3391476Z 
+2026-10-02T14:37:35.1030053Z Loading package information...                                                  
+2026-10-02T14:37:35.1962346Z Loading local repository...                                                     
+2026-10-02T14:37:35.1964685Z [                                       ] 3% Loading local repository...        
+2026-10-02T14:37:35.2059322Z [                                       ] 3% Fetch remote repository...         
+2026-10-02T14:37:35.4491210Z [=                                      ] 3% Fetch remote repository...         
+2026-10-02T14:37:35.5487669Z [=                                      ] 4% Fetch remote repository...         
+2026-10-02T14:37:35.5771579Z [=                                      ] 5% Fetch remote repository...         
+2026-10-02T14:37:35.6227339Z [==                                     ] 5% Fetch remote repository...         
+2026-10-02T14:37:35.6857699Z [==                                     ] 6% Fetch remote repository...         
+2026-10-02T14:37:35.7452181Z [==                                     ] 7% Fetch remote repository...         
+2026-10-02T14:37:35.7453470Z [==                                     ] 7% Computing updates...               
+2026-10-02T14:37:35.7603655Z [===                                    ] 8% Computing updates...               
+2026-10-02T14:37:35.7672538Z [===                                    ] 10% Computing updates...              
+2026-10-02T14:37:35.7674844Z [=======================================] 100% Computing updates...             
+2026-10-02T14:37:35.7676641Z 
+2026-10-02T14:37:35.7876375Z [command]/usr/local/lib/android/sdk/cmdline-tools/22.0/bin/sdkmanager platforms;android-35
+2026-10-02T14:37:35.8908711Z WARNING: The SDK Manager CLI tool (sdkmanager) is deprecated. Use Android CLI instead.
+2026-10-02T14:37:35.8925875Z The 'android' binary can also be found in the cmdline-tools directory, and 'android sdk' is the replacement for 'sdkmanager'.
+2026-10-02T14:37:35.8932163Z To learn more about the Android CLI and how to use it, see the documentation (https://d.android.com/tools/agents/android-cli)
+2026-10-02T14:37:35.8971266Z 
+2026-10-02T14:37:36.7033301Z Loading package information...                                                  
+2026-10-02T14:37:36.8050393Z Loading local repository...                                                     
+2026-10-02T14:37:36.8052451Z [                                       ] 3% Loading local repository...        
+2026-10-02T14:37:36.8154807Z [                                       ] 3% Fetch remote repository...         
+2026-10-02T14:37:37.1937976Z [=                                      ] 3% Fetch remote repository...         
+2026-10-02T14:37:37.2741987Z [=                                      ] 4% Fetch remote repository...         
+2026-10-02T14:37:37.3129979Z [=                                      ] 5% Fetch remote repository...         
+2026-10-02T14:37:37.3622371Z [==                                     ] 5% Fetch remote repository...         
+2026-10-02T14:37:37.4364190Z [==                                     ] 6% Fetch remote repository...         
+2026-10-02T14:37:37.5342173Z [==                                     ] 7% Fetch remote repository...         
+2026-10-02T14:37:37.5351742Z [==                                     ] 7% Computing updates...               
+2026-10-02T14:37:37.5501944Z [===                                    ] 8% Computing updates...               
+2026-10-02T14:37:37.5576373Z [===                                    ] 10% Computing updates...              
+2026-10-02T14:37:37.5577265Z [=======================================] 100% Computing updates...             
+2026-10-02T14:37:37.5578086Z 
+2026-10-02T14:37:37.5823482Z [command]/usr/local/lib/android/sdk/cmdline-tools/22.0/bin/sdkmanager build-tools;34.0.0
+2026-10-02T14:37:37.6818948Z WARNING: The SDK Manager CLI tool (sdkmanager) is deprecated. Use Android CLI instead.
+2026-10-02T14:37:37.6847084Z The 'android' binary can also be found in the cmdline-tools directory, and 'android sdk' is the replacement for 'sdkmanager'.
+2026-10-02T14:37:37.6848692Z To learn more about the Android CLI and how to use it, see the documentation (https://d.android.com/tools/agents/android-cli)
+2026-10-02T14:37:37.6852220Z 
+2026-10-02T14:37:38.5311434Z Loading package information...                                                  
+2026-10-02T14:37:38.6402676Z Loading local repository...                                                     
+2026-10-02T14:37:38.6403664Z [                                       ] 3% Loading local repository...        
+2026-10-02T14:37:38.6513127Z [                                       ] 3% Fetch remote repository...         
+2026-10-02T14:37:39.0022091Z [=                                      ] 3% Fetch remote repository...         
+2026-10-02T14:37:39.0562247Z [=                                      ] 4% Fetch remote repository...         
+2026-10-02T14:37:39.0951792Z [=                                      ] 5% Fetch remote repository...         
+2026-10-02T14:37:39.1635863Z [==                                     ] 5% Fetch remote repository...         
+2026-10-02T14:37:39.2359777Z [==                                     ] 6% Fetch remote repository...         
+2026-10-02T14:37:39.3193934Z [==                                     ] 7% Fetch remote repository...         
+2026-10-02T14:37:39.3221872Z [==                                     ] 7% Computing updates...               
+2026-10-02T14:37:39.3319738Z [===                                    ] 8% Computing updates...               
+2026-10-02T14:37:39.3403217Z [===                                    ] 10% Computing updates...              
+2026-10-02T14:37:39.3411159Z [=======================================] 100% Computing updates...             
+2026-10-02T14:37:39.3434312Z 
+2026-10-02T14:37:39.3664022Z [command]/usr/local/lib/android/sdk/cmdline-tools/22.0/bin/sdkmanager build-tools;35.0.0
+2026-10-02T14:37:39.4670983Z WARNING: The SDK Manager CLI tool (sdkmanager) is deprecated. Use Android CLI instead.
+2026-10-02T14:37:39.4672662Z The 'android' binary can also be found in the cmdline-tools directory, and 'android sdk' is the replacement for 'sdkmanager'.
+2026-10-02T14:37:39.4674377Z To learn more about the Android CLI and how to use it, see the documentation (https://d.android.com/tools/agents/android-cli)
+2026-10-02T14:37:39.4675625Z 
+2026-10-02T14:37:40.2849175Z Loading package information...                                                  
+2026-10-02T14:37:40.3826225Z Loading local repository...                                                     
+2026-10-02T14:37:40.3827666Z [                                       ] 3% Loading local repository...        
+2026-10-02T14:37:40.3925871Z [                                       ] 3% Fetch remote repository...         
+2026-10-02T14:37:40.7782527Z [=                                      ] 3% Fetch remote repository...         
+2026-10-02T14:37:40.8584237Z [=                                      ] 4% Fetch remote repository...         
+2026-10-02T14:37:40.8950211Z [=                                      ] 5% Fetch remote repository...         
+2026-10-02T14:37:40.9436668Z [==                                     ] 5% Fetch remote repository...         
+2026-10-02T14:37:41.0381799Z [==                                     ] 6% Fetch remote repository...         
+2026-10-02T14:37:41.1192157Z [==                                     ] 7% Fetch remote repository...         
+2026-10-02T14:37:41.1193437Z [==                                     ] 7% Computing updates...               
+2026-10-02T14:37:41.1333409Z [===                                    ] 8% Computing updates...               
+2026-10-02T14:37:41.1400609Z [===                                    ] 10% Computing updates...              
+2026-10-02T14:37:41.1401811Z [=======================================] 100% Computing updates...             
+2026-10-02T14:37:41.1402664Z 
+2026-10-02T14:37:41.2398000Z ##[group]Run actions/cache@v6
+2026-10-02T14:37:41.2398307Z with:
+2026-10-02T14:37:41.2398523Z   path: ~/.cache/pip
+2026-10-02T14:37:41.2398940Z   key: Linux-pip-420e3f82d1af2f23f097e91db4173a7699fcefe48b3c74249f0f342450880cf6
+2026-10-02T14:37:41.2399433Z   restore-keys: Linux-pip-
+2026-10-02T14:37:41.2399710Z   enableCrossOsArchive: false
+2026-10-02T14:37:41.2399986Z   fail-on-cache-miss: false
+2026-10-02T14:37:41.2400252Z   lookup-only: false
+2026-10-02T14:37:41.2400510Z   save-always: false
+2026-10-02T14:37:41.2401137Z env:
+2026-10-02T14:37:41.2401489Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:41.2402057Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:41.2402494Z   MAVEN_ARGS: -ntp
+2026-10-02T14:37:41.2402797Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:41.2403286Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+2026-10-02T14:37:41.2403821Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:41.2404249Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:41.2404677Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:41.2405112Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+2026-10-02T14:37:41.2405493Z   ANDROID_HOME: /usr/local/lib/android/sdk
+2026-10-02T14:37:41.2405800Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+2026-10-02T14:37:41.2406089Z ##[endgroup]
+2026-10-02T14:37:41.4376387Z Cache not found for input keys: Linux-pip-420e3f82d1af2f23f097e91db4173a7699fcefe48b3c74249f0f342450880cf6, Linux-pip-
+2026-10-02T14:37:41.4618239Z ##[group]Run python -m pip install --upgrade pip
+2026-10-02T14:37:41.4618925Z [36;1mpython -m pip install --upgrade pip[0m
+2026-10-02T14:37:41.4619506Z [36;1mpip install -r requirements-android.txt[0m
+2026-10-02T14:37:41.4961559Z shell: /usr/bin/bash -e {0}
+2026-10-02T14:37:41.4962028Z env:
+2026-10-02T14:37:41.4962564Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:41.4963452Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:41.4964146Z   MAVEN_ARGS: -ntp
+2026-10-02T14:37:41.4964613Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:41.4965349Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+2026-10-02T14:37:41.4966085Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:41.4967040Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:41.4967762Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:41.4968435Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+2026-10-02T14:37:41.4969036Z   ANDROID_HOME: /usr/local/lib/android/sdk
+2026-10-02T14:37:41.4969551Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+2026-10-02T14:37:41.4970033Z ##[endgroup]
+2026-10-02T14:37:42.3457615Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages (26.2.1)
+2026-10-02T14:37:42.9976430Z Collecting flet>=0.27.0 (from -r requirements-android.txt (line 5))
+2026-10-02T14:37:43.0492348Z   Downloading flet-1.0.3-py3-none-any.whl.metadata (7.5 kB)
+2026-10-02T14:37:43.0685932Z Collecting flet-camera>=0.1.0 (from -r requirements-android.txt (line 6))
+2026-10-02T14:37:43.0754840Z   Downloading flet_camera-1.0.3-py3-none-any.whl.metadata (2.6 kB)
+2026-10-02T14:37:43.0945516Z Collecting flet-permission-handler>=0.1.0 (from -r requirements-android.txt (line 7))
+2026-10-02T14:37:43.1027691Z   Downloading flet_permission_handler-1.0.3-py3-none-any.whl.metadata (3.0 kB)
+2026-10-02T14:37:43.1173637Z Collecting openpyxl>=3.1.0 (from -r requirements-android.txt (line 8))
+2026-10-02T14:37:43.1247094Z   Downloading openpyxl-3.1.5-py2.py3-none-any.whl.metadata (2.5 kB)
+2026-10-02T14:37:43.1380970Z Collecting oauthlib>=3.2.2 (from flet>=0.27.0->-r requirements-android.txt (line 5))
+2026-10-02T14:37:43.1424801Z   Downloading oauthlib-4.0.0-py3-none-any.whl.metadata (8.6 kB)
+2026-10-02T14:37:43.1600293Z Collecting httpx>=0.28.1 (from flet>=0.27.0->-r requirements-android.txt (line 5))
+2026-10-02T14:37:43.1649515Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-10-02T14:37:43.1765795Z Collecting repath>=0.9.0 (from flet>=0.27.0->-r requirements-android.txt (line 5))
+2026-10-02T14:37:43.1821195Z   Downloading repath-0.9.0-py3-none-any.whl.metadata (899 bytes)
+2026-10-02T14:37:43.2787310Z Collecting msgpack>=1.1.0 (from flet>=0.27.0->-r requirements-android.txt (line 5))
+2026-10-02T14:37:43.2834183Z   Downloading msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+2026-10-02T14:37:43.2969539Z Collecting et-xmlfile (from openpyxl>=3.1.0->-r requirements-android.txt (line 8))
+2026-10-02T14:37:43.3042336Z   Downloading et_xmlfile-2.0.0-py3-none-any.whl.metadata (2.7 kB)
+2026-10-02T14:37:43.3228500Z Collecting anyio (from httpx>=0.28.1->flet>=0.27.0->-r requirements-android.txt (line 5))
+2026-10-02T14:37:43.3273171Z   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+2026-10-02T14:37:43.3464902Z Collecting certifi (from httpx>=0.28.1->flet>=0.27.0->-r requirements-android.txt (line 5))
+2026-10-02T14:37:43.3507446Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+2026-10-02T14:37:43.3684190Z Collecting httpcore==1.* (from httpx>=0.28.1->flet>=0.27.0->-r requirements-android.txt (line 5))
+2026-10-02T14:37:43.3734696Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-10-02T14:37:43.3910025Z Collecting idna (from httpx>=0.28.1->flet>=0.27.0->-r requirements-android.txt (line 5))
+2026-10-02T14:37:43.3951795Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-10-02T14:37:43.4074411Z Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.28.1->flet>=0.27.0->-r requirements-android.txt (line 5))
+2026-10-02T14:37:43.4116885Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-10-02T14:37:43.4273709Z Collecting six>=1.9.0 (from repath>=0.9.0->flet>=0.27.0->-r requirements-android.txt (line 5))
+2026-10-02T14:37:43.4313893Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2026-10-02T14:37:43.4483622Z Collecting typing_extensions>=4.16.0 (from anyio->httpx>=0.28.1->flet>=0.27.0->-r requirements-android.txt (line 5))
+2026-10-02T14:37:43.4528824Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-10-02T14:37:43.4674000Z Downloading flet-1.0.3-py3-none-any.whl (635 kB)
+2026-10-02T14:37:43.4820519Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 635.7/635.7 kB 55.3 MB/s  0:00:00
+2026-10-02T14:37:43.4873166Z Downloading flet_camera-1.0.3-py3-none-any.whl (17 kB)
+2026-10-02T14:37:43.4940392Z Downloading flet_permission_handler-1.0.3-py3-none-any.whl (13 kB)
+2026-10-02T14:37:43.5002436Z Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+2026-10-02T14:37:43.5085204Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-10-02T14:37:43.5150608Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-10-02T14:37:43.5211016Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-10-02T14:37:43.5276322Z Downloading msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (472 kB)
+2026-10-02T14:37:43.5361660Z Downloading oauthlib-4.0.0-py3-none-any.whl (159 kB)
+2026-10-02T14:37:43.5436598Z Downloading repath-0.9.0-py3-none-any.whl (4.7 kB)
+2026-10-02T14:37:43.5496559Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2026-10-02T14:37:43.5567659Z Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+2026-10-02T14:37:43.5629580Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-10-02T14:37:43.5715841Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-10-02T14:37:43.5777483Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+2026-10-02T14:37:43.5868140Z Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+2026-10-02T14:37:43.6614234Z Installing collected packages: typing_extensions, six, oauthlib, msgpack, idna, h11, et-xmlfile, certifi, repath, openpyxl, httpcore, anyio, httpx, flet, flet-permission-handler, flet-camera
+2026-10-02T14:37:44.7133496Z 
+2026-10-02T14:37:44.7155278Z Successfully installed anyio-4.15.1 certifi-2026.7.22 et-xmlfile-2.0.0 flet-1.0.3 flet-camera-1.0.3 flet-permission-handler-1.0.3 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 msgpack-1.2.3 oauthlib-4.0.0 openpyxl-3.1.5 repath-0.9.0 six-1.17.0 typing_extensions-4.16.0
+2026-10-02T14:37:44.7788639Z ##[group]Run flet build apk --yes --verbose
+2026-10-02T14:37:44.7789048Z [36;1mflet build apk --yes --verbose[0m
+2026-10-02T14:37:44.7854166Z shell: /usr/bin/bash -e {0}
+2026-10-02T14:37:44.7854448Z env:
+2026-10-02T14:37:44.7854815Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:44.7855385Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-02T14:37:44.7855823Z   MAVEN_ARGS: -ntp
+2026-10-02T14:37:44.7856128Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:44.7856608Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+2026-10-02T14:37:44.7857073Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:44.7857491Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:44.7857917Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-10-02T14:37:44.7858397Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+2026-10-02T14:37:44.7858794Z   ANDROID_HOME: /usr/local/lib/android/sdk
+2026-10-02T14:37:44.7859123Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+2026-10-02T14:37:44.7859432Z ##[endgroup]
+2026-10-02T14:37:49.7041733Z Installing flet-cli 1.0.3 package...OK
+2026-10-02T14:37:49.7042919Z [14:37:49] Downloading Flutter 3.44.8 from                                      
+2026-10-02T14:37:49.7044220Z            https://storage.googleapis.com/flutter_infra_release/releases/stable/
+2026-10-02T14:37:49.7045326Z            linux/flutter_linux_3.44.8-stable.tar.xz...                          
+2026-10-02T14:37:53.7337815Z [14:37:53] Extracting Flutter to /home/runner/flutter/3.44.8...                 
+2026-10-02T14:39:36.5601525Z [14:39:36] Flutter 3.44.8 installed at /home/runner/flutter/3.44.8.             
+2026-10-02T14:39:36.5608014Z            Ensure Flutter has desktop support enabled                           
+2026-10-02T14:39:36.5618355Z            Run subprocess: ['/home/runner/flutter/3.44.8/bin/flutter', 'config',
+2026-10-02T14:39:36.5620060Z            '--no-version-check', '--suppress-analytics',                        
+2026-10-02T14:39:36.5621716Z            '--enable-linux-desktop']                                            
+2026-10-02T14:39:36.6519956Z            Setting "enable-linux-desktop" value to "true".                      
+2026-10-02T14:39:36.6525737Z                                                                                 
+2026-10-02T14:39:36.6534423Z            You may need to restart any open editors for them to read new        
+2026-10-02T14:39:36.6535158Z            settings.                                                            
+2026-10-02T14:39:36.6576137Z            Flutter 3.44.8 installed ✅                                          
+2026-10-02T14:39:36.6583675Z            Flutter executable: /home/runner/flutter/3.44.8/bin/flutter          
+2026-10-02T14:39:36.6590298Z            Dart executable: /home/runner/flutter/3.44.8/bin/dart                
+2026-10-02T14:39:37.0287003Z [14:39:37] Configuring Flutter's path to JDK                                    
+2026-10-02T14:39:37.0296786Z            Run subprocess: ['/home/runner/flutter/3.44.8/bin/flutter', 'config',
+2026-10-02T14:39:37.0297756Z            '--no-version-check', '--suppress-analytics',                        
+2026-10-02T14:39:37.0298477Z            '--jdk-dir=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x6
+2026-10-02T14:39:37.0299175Z            4']                                                                  
+2026-10-02T14:39:37.1165647Z            Setting "jdk-dir" value to                                           
+2026-10-02T14:39:37.1166799Z            "/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64".       
+2026-10-02T14:39:37.1169979Z                                                                                 
+2026-10-02T14:39:37.1178311Z            You may need to restart any open editors for them to read new        
+2026-10-02T14:39:37.1179569Z            settings.                                                            
+2026-10-02T14:39:37.1205897Z            JDK installed ✅                                                     
+2026-10-02T14:39:37.1214534Z            Android SDK installation found at /usr/local/lib/android/sdk         
+2026-10-02T14:39:37.1221382Z            Android SDK package "platform-tools" is already installed            
+2026-10-02T14:39:37.1227877Z            Android SDK package "platforms;android-35" is already installed      
+2026-10-02T14:39:37.1234973Z            Android SDK package "build-tools;34.0.0" is already installed        
+2026-10-02T14:39:37.1240924Z            Android SDK installed ✅                                             
+2026-10-02T14:39:38.0837454Z [14:39:38] Created app shell ✅                                                 
+2026-10-02T14:39:38.0862918Z            Excluded from app package by default: .git, .github, .gitignore, .run
+2026-10-02T14:39:38.0864305Z            (use --include <path> or --no-default-excludes to package them)      
+2026-10-02T14:39:38.0871548Z            App package exclude list: ['build', '.git', '.github', '.gitignore', 
+2026-10-02T14:39:38.0872665Z            '.run']                                                              
+2026-10-02T14:39:38.0881474Z            Compile app: True, cleanup app: False, cleanup packages: True        
+2026-10-02T14:39:38.0882623Z            (cleanup removes serious_python's default junk globs plus any        
+2026-10-02T14:39:38.0885844Z            --cleanup-app-files/--cleanup-package-files)                         
+2026-10-02T14:39:38.0904763Z            Run subprocess: ['/home/runner/flutter/3.44.8/bin/dart', 'run',      
+2026-10-02T14:39:38.0905608Z            '--suppress-analytics', 'serious_python:main', 'package',            
+2026-10-02T14:39:38.0906304Z            '/home/runner/work/Scan-based/Scan-based', '--platform', 'Android',  
+2026-10-02T14:39:38.0906949Z            '--python-version', '3.14', '--arch', 'arm64-v8a,x86_64,armeabi-v7a',
+2026-10-02T14:39:38.0907974Z            '-r', 'Pillow >=10.0.0', '-r', 'flet >=0.27.0', '-r', 'flet-camera   
+2026-10-02T14:39:38.0908695Z            >=0.1.0', '-r', 'flet-permission-handler >=0.1.0', '-r', 'openpyxl   
+2026-10-02T14:39:38.0909362Z            >=3.1.0', '-r', 'pyzbar >=0.1.10', '--exclude', 'build', '--exclude',
+2026-10-02T14:39:38.0909977Z            '.git', '--exclude', '.github', '--exclude', '.gitignore',           
+2026-10-02T14:39:38.0910624Z            '--exclude', '.run', '--compile-app', '--compile-packages',          
+2026-10-02T14:39:38.0911660Z            '--cleanup-packages']                                                
+2026-10-02T14:39:46.4447821Z [14:39:46] Running build hooks...Running build hooks...Running package command  
+2026-10-02T14:39:46.4509670Z            Python 3.14 (CPython 3.14.7, Pyodide 314.0.7)                        
+2026-10-02T14:39:46.4652239Z            Extra PyPi indexes: [https://pypi.flet.dev]                          
+2026-10-02T14:39:46.4663570Z            Created temp directory: /tmp/serious_python_tempSXPMEH               
+2026-10-02T14:39:46.4672575Z            Copying Python app from /home/runner/work/Scan-based/Scan-based to a 
+2026-10-02T14:39:46.4673614Z            temp directory                                                       
+2026-10-02T14:39:46.4877419Z            Compiling Python sources in a temp directory                         
+2026-10-02T14:39:46.4916824Z            Downloading Python distributive from                                 
+2026-10-02T14:39:46.4918138Z            https://github.com/astral-sh/python-build-standalone/releases/downloa
+2026-10-02T14:39:46.4919355Z            d/20260901/cpython-3.14.7+20260901-x86_64-unknown-linux-gnu-install_o
+2026-10-02T14:39:46.4920621Z            nly_stripped.tar.gz to                                               
+2026-10-02T14:39:46.4921760Z            /home/runner/.flet/cache/python-build-standalone/20260901/cpython-3.1
+2026-10-02T14:39:46.4922836Z            4.7+20260901-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz   
+2026-10-02T14:39:47.6020538Z [14:39:47] Extracting Python distributive                                       
+2026-10-02T14:39:48.3477563Z [14:39:48] Python distributive extracted to                                     
+2026-10-02T14:39:48.3479602Z            /home/runner/work/Scan-based/Scan-based/build/flutter/build/build_pyt
+2026-10-02T14:39:48.3481448Z            hon_3.14.7                                                           
+2026-10-02T14:39:48.3489205Z            Running:                                                             
+2026-10-02T14:39:48.3490411Z            /home/runner/work/Scan-based/Scan-based/build/flutter/build/build_pyt
+2026-10-02T14:39:48.3491761Z            hon_3.14.7/python/bin/python3 -m compileall -b                       
+2026-10-02T14:39:48.3492908Z            /tmp/serious_python_tempSXPMEH                                       
+2026-10-02T14:39:48.6204611Z            Configured Android/arm64-v8a platform with sitecustomize.py          
+2026-10-02T14:39:48.6220366Z            Installing [Pillow >=10.0.0, flet >=0.27.0, flet-camera >=0.1.0,     
+2026-10-02T14:39:48.6222369Z            flet-permission-handler >=0.1.0, openpyxl >=3.1.0, pyzbar >=0.1.10]  
+2026-10-02T14:39:48.6223822Z            with pip command to                                                  
+2026-10-02T14:39:48.6225397Z            /home/runner/work/Scan-based/Scan-based/build/site-packages/arm64-v8a
+2026-10-02T14:39:48.6239461Z            Running:                                                             
+2026-10-02T14:39:48.6241009Z            /home/runner/work/Scan-based/Scan-based/build/flutter/build/build_pyt
+2026-10-02T14:39:48.6242669Z            hon_3.14.7/python/bin/python3 -m pip install --upgrade               
+2026-10-02T14:39:48.6243964Z            --disable-pip-version-check --timeout 30 --retries 3 --no-input      
+2026-10-02T14:39:48.6245407Z            --only-binary :all: --extra-index-url https://pypi.flet.dev --target 
+2026-10-02T14:39:48.6246739Z            /home/runner/work/Scan-based/Scan-based/build/site-packages/arm64-v8a
+2026-10-02T14:39:48.6248241Z            Pillow >=10.0.0 flet >=0.27.0 flet-camera >=0.1.0                    
+2026-10-02T14:39:48.6249719Z            flet-permission-handler >=0.1.0 openpyxl >=3.1.0 pyzbar >=0.1.10     
+2026-10-02T14:39:51.1776370Z [14:39:51] ERROR: Could not find a version that satisfies the requirement       
+2026-10-02T14:39:51.1777192Z            pyzbar>=0.1.10 (from versions: 0.1.0, 0.1.1, 0.1.2, 0.1.3, 0.1.4,    
+2026-10-02T14:39:51.1778154Z            0.1.5, 0.1.7, 0.1.8, 0.1.9)                                          
+2026-10-02T14:39:51.1794371Z            ERROR: No matching distribution found for pyzbar>=0.1.10             
+2026-10-02T14:39:51.1835955Z            Run subprocess: ['/home/runner/flutter/3.44.8/bin/flutter', 'doctor',
+2026-10-02T14:39:51.1836873Z            '--no-version-check', '--suppress-analytics']                        
+2026-10-02T14:40:06.2029497Z [14:40:06] Doctor summary (to see all details, run flutter doctor -v):          
+2026-10-02T14:40:06.2032381Z            [✓] Flutter (Channel stable, 3.44.8, on Ubuntu 24.04.5 LTS           
+2026-10-02T14:40:06.2034066Z            6.17.0-1022-azure, locale C.UTF-8)                                   
+2026-10-02T14:40:06.2035482Z            [✓] Android toolchain - develop for Android devices (Android SDK     
+2026-10-02T14:40:06.2036742Z            version 37.0.0)                                                      
+2026-10-02T14:40:06.2038058Z            [✓] Chrome - develop for the web                                     
+2026-10-02T14:40:06.2039316Z            [✗] Linux toolchain - develop for Linux desktop                      
+2026-10-02T14:40:06.2040525Z                ✗ GTK 3.0 development libraries are required for Linux           
+2026-10-02T14:40:06.2041922Z            development.                                                         
+2026-10-02T14:40:06.2043445Z                  They are likely available from your distribution (e.g.: apt    
+2026-10-02T14:40:06.2044670Z            install libgtk-3-dev)                                                
+2026-10-02T14:40:06.2045768Z                ! Unable to access driver information using 'eglinfo'.           
+2026-10-02T14:40:06.2046839Z                  It is likely available from your distribution (e.g.: apt       
+2026-10-02T14:40:06.2047873Z            install mesa-utils)                                                  
+2026-10-02T14:40:06.2049045Z            [✓] Connected device (2 available)                                   
+2026-10-02T14:40:06.2050174Z            [✓] Network resources                                                
+2026-10-02T14:40:06.2051459Z                                                                                 
+2026-10-02T14:40:06.2052435Z            ! Doctor found issues in 1 category.                                 
+2026-10-02T14:40:06.2053413Z                                                                                 
+2026-10-02T14:40:06.2054597Z ╭──────────────────────────────────────────────────────────────────────────────╮
+2026-10-02T14:40:06.2055774Z │ Error building Flet app - see the log of failed command above.               │
+2026-10-02T14:40:06.2697024Z ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-10-02T14:40:06.2712550Z ##[error]Process completed with exit code 1.
+2026-10-02T14:40:06.2880338Z Post job cleanup.
+2026-10-02T14:40:06.3829296Z Post job cleanup.
+2026-10-02T14:40:06.4764354Z [command]/usr/bin/git version
+2026-10-02T14:40:06.4824937Z git version 2.55.0
+2026-10-02T14:40:06.4869133Z Temporarily overriding HOME='/home/runner/work/_temp/05e7adde-3b81-4391-84b9-2fa09647cd28' before making global git config changes
+2026-10-02T14:40:06.4870977Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T14:40:06.4875546Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Scan-based/Scan-based
+2026-10-02T14:40:06.4914595Z Removing SSH command configuration
+2026-10-02T14:40:06.4922594Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T14:40:06.4964368Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T14:40:06.5230190Z Removing HTTP extra header
+2026-10-02T14:40:06.5237411Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T14:40:06.5291816Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T14:40:06.5582147Z Removing includeIf entries pointing to credentials config files
+2026-10-02T14:40:06.5588754Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T14:40:06.5627182Z includeif.gitdir:/home/runner/work/Scan-based/Scan-based/.git.path
+2026-10-02T14:40:06.5628467Z includeif.gitdir:/home/runner/work/Scan-based/Scan-based/.git/worktrees/*.path
+2026-10-02T14:40:06.5629560Z includeif.gitdir:/github/workspace/.git.path
+2026-10-02T14:40:06.5630508Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-02T14:40:06.5644925Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Scan-based/Scan-based/.git.path
+2026-10-02T14:40:06.5667796Z /home/runner/work/_temp/git-credentials-2331015c-2710-48a8-abc6-ebc24623d094.config
+2026-10-02T14:40:06.5681251Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Scan-based/Scan-based/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-2331015c\-2710\-48a8\-abc6\-ebc24623d094\.config
+2026-10-02T14:40:06.5729493Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Scan-based/Scan-based/.git/worktrees/*.path
+2026-10-02T14:40:06.5763264Z /home/runner/work/_temp/git-credentials-2331015c-2710-48a8-abc6-ebc24623d094.config
+2026-10-02T14:40:06.5775198Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Scan-based/Scan-based/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-2331015c\-2710\-48a8\-abc6\-ebc24623d094\.config
+2026-10-02T14:40:06.5829300Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-02T14:40:06.5866703Z /github/runner_temp/git-credentials-2331015c-2710-48a8-abc6-ebc24623d094.config
+2026-10-02T14:40:06.5879755Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-2331015c\-2710\-48a8\-abc6\-ebc24623d094\.config
+2026-10-02T14:40:06.5924332Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-02T14:40:06.5954984Z /github/runner_temp/git-credentials-2331015c-2710-48a8-abc6-ebc24623d094.config
+2026-10-02T14:40:06.5963863Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-2331015c\-2710\-48a8\-abc6\-ebc24623d094\.config
+2026-10-02T14:40:06.6013291Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T14:40:06.6252592Z Removing credentials config '/home/runner/work/_temp/git-credentials-2331015c-2710-48a8-abc6-ebc24623d094.config'
+2026-10-02T14:40:06.6409383Z Cleaning up orphan processes
+2026-10-02T14:40:06.6826270Z Terminate orphan process: pid (3487) (adb)

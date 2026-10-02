@@ -1,15 +1,21 @@
 """导出 xlsx 备份：将库存与出入库流水导出为 Excel（openpyxl + FilePicker）。
 
+Flet 1.0 适配：FilePicker 已是**异步服务**——直接实例化并 `await` 调用，
+不再挂 page.overlay、也不再用 on_result 回调。
+安卓 / iOS / Web 必须传 `src_bytes` 才会真正写入文件内容；
+桌面端 save_file 仅返回路径，因此拿到路径后补写一次。
+
 字段范围：
 - Sheet「商品库存」：编码, 商品名称, 当前库存, 安全库存, 单位, 仓库/库位, 更新时间
 - Sheet「出入库流水」：序号, 编码, 商品名称, 操作类型, 数量, 操作人, 仓库/库位, 备注, 操作时间
 
 文件命名：库存备份_YYYYMMDD_HHMMSS.xlsx（例如 库存备份_20261002_205000.xlsx）
 
-交互逻辑：点击按钮 → 弹出系统保存对话框（已预填文件名）→ 用户选择路径或取消；
-  选择后写入并弹成功提示（含完整路径）；取消则不导出；异常弹错误提示。
+交互逻辑：点击按钮 → 生成 xlsx 字节 → 弹出系统保存对话框（已预填文件名）→
+  用户选择路径或取消；选择后写入并弹成功提示（含完整路径）；取消则不导出；异常弹错误提示。
 """
 import datetime as _dt
+from io import BytesIO
 
 import flet as ft
 
@@ -18,37 +24,54 @@ from app.config import PRIMARY, OUT_COLOR, BTN_HEIGHT
 
 
 def build_export_button(app):
-    page = app.page
-    # FilePicker 在页面 overlay 上只需挂载一次（单例），多次进入首页复用同一实例
-    fp = getattr(page, "_export_fp", None)
-    if fp is None:
-        fp = ft.FilePicker(on_result=lambda e: _on_picked(app, e))
-        page.overlay.append(fp)
-        page._export_fp = fp
+    async def on_click(e):
+        await _export(app)
 
     return ft.FilledTonalButton(
         "导出 xlsx 备份", icon=ft.Icons.DOWNLOAD, height=BTN_HEIGHT,
-        on_click=lambda e: _start_export(fp),
+        on_click=on_click,
     )
 
 
-def _start_export(file_picker: ft.FilePicker):
+async def _export(app):
     name = f"库存备份_{_dt.datetime.now():%Y%m%d_%H%M%S}.xlsx"
-    file_picker.save_file(dialog_title="导出库存备份", file_name=name)
 
-
-def _on_picked(app, e: ft.FilePickerResultEvent):
-    if not e.path:
-        return  # 用户取消
-    app.snack("正在导出备份…", PRIMARY)
+    # 1) 先在内存生成 xlsx 内容
     try:
-        _write_xlsx(e.path)
-        app.snack(f"已导出备份：{e.path}", PRIMARY)
+        data = _build_xlsx_bytes()
+    except Exception as ex:  # noqa: BLE001
+        app.snack(f"生成备份失败：{ex}", OUT_COLOR)
+        return
+
+    # 2) 弹出保存对话框（安卓必需 src_bytes）
+    try:
+        file_picker = ft.FilePicker()
+        path = await file_picker.save_file(
+            dialog_title="导出库存备份",
+            file_name=name,
+            file_type=ft.FilePickerFileType.CUSTOM,
+            allowed_extensions=["xlsx"],
+            src_bytes=data,
+        )
     except Exception as ex:  # noqa: BLE001
         app.snack(f"导出失败：{ex}", OUT_COLOR)
+        return
+
+    if not path:
+        return  # 用户取消
+
+    # 3) 桌面端 save_file 只返回路径不写内容 → 补写；移动端已由 src_bytes 写入，写入失败忽略
+    try:
+        with open(path, "wb") as f:
+            f.write(data)
+    except Exception:  # noqa: BLE001
+        pass
+
+    app.snack(f"已导出备份：{path}", PRIMARY)
 
 
-def _write_xlsx(path: str):
+def _build_xlsx_bytes() -> bytes:
+    """生成 xlsx 并返回字节内容（不落盘，便于安卓通过 src_bytes 写出）。"""
     from openpyxl import Workbook
     from openpyxl.styles import Alignment, Font, PatternFill
 
@@ -87,4 +110,6 @@ def _write_xlsx(path: str):
             ws.column_dimensions[letter].width = 18
         ws.freeze_panes = "A2"
 
-    wb.save(path)
+    buf = BytesIO()
+    wb.save(buf)
+    return buf.getvalue()

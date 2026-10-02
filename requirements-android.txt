@@ -1,8 +1,8 @@
-# 用于 `flet build apk` / `flet build aab` 的安卓构建依赖清单。
-# 注意：pyzbar 与 Pillow 依赖系统原生库（libzbar / libjpeg 等），
-# 没有安卓可用的 wheel，且扫码页中均为「懒加载 + 失败兜底」，
-# 安卓端走 mobile_scanner 原生控件，故此处排除，避免构建失败。
-flet>=0.27.0
-flet-camera>=0.1.0
-flet-permission-handler>=0.1.0
+# 安卓构建参考依赖（供 CI 的 Python 环境使用）
+# ⚠️ 重要：`flet build apk` 真正打包的依赖来自 pyproject.toml 的 [project.dependencies]，
+#    本文件不参与打包。pyzbar（依赖系统 libzbar，无安卓 wheel）已排除。
+# Flet 1.0：扩展包与 flet 主包版本锁步，统一钉 1.0.3。
+flet==1.0.3
+flet-camera==1.0.3
+flet-permission-handler==1.0.3
 openpyxl>=3.1.0

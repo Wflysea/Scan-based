@@ -4,11 +4,14 @@ version = "1.0.0"
 description = "扫码出入库管理 (Flet + SQLite)"
 requires-python = ">=3.10"
 dependencies = [
-    "flet>=0.27.0",
-    "flet-camera>=0.1.0",
-    "flet-permission-handler>=0.1.0",
-    # 注意：pyzbar 在安卓 APK 内无可用 wheel（最高仅 0.1.9 且依赖系统 libzbar），
-    # 不能放进打包依赖；安卓扫码走原生 mobile_scanner 控件，桌面端 pyzbar 仍由 requirements.txt 安装。
+    # Flet 1.0 注意：ft.app(target=...) 已移除，入口改用 ft.run(main)。
+    # 扩展包与 flet 主包**版本锁步**：flet-camera / flet-permission-handler 1.0.3
+    # 的 requires_dist 是精确的 "flet==1.0.3"，故三者必须钉成同一版本，否则依赖冲突。
+    "flet==1.0.3",
+    "flet-camera==1.0.3",
+    "flet-permission-handler==1.0.3",
+    # pyzbar 在安卓无可用 wheel（依赖系统 libzbar，PyPI 最高仅 0.1.9），不能放进打包依赖；
+    # 安卓扫码走原生 mobile_scanner 或手动输入，桌面端 pyzbar 仍由 requirements.txt 安装。
     "Pillow>=10.0.0",
     "openpyxl>=3.1.0",
 ]

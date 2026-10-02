@@ -1,4 +1,11 @@
-"""流水页：按编码、时间范围、出入库类型筛选并查看历史记录。"""
+"""流水页：按编码、时间范围、出入库类型筛选并查看历史记录。
+
+Flet 1.0 适配说明：
+- 下拉选项改用 ft.DropdownOption（1.0 新类名，取代 ft.dropdown.Option）
+- 日期范围改为文本框输入 YYYY-MM-DD（1.0 中 DatePicker 已服务化/API 变更，
+  用文本输入可稳定跨版本工作）
+- 按钮不再有 text 属性，更新标题统一用 content
+"""
 import flet as ft
 from datetime import date
 
@@ -12,46 +19,44 @@ def records_view(app):
     type_dd = ft.Dropdown(
         label="类型", height=INPUT_HEIGHT, border_radius=10,
         options=[
-            ft.dropdown.Option("", "全部"),
-            ft.dropdown.Option("IN", "入库"),
-            ft.dropdown.Option("OUT", "出库"),
+            ft.DropdownOption(key="", text="全部"),
+            ft.DropdownOption(key="IN", text="入库"),
+            ft.DropdownOption(key="OUT", text="出库"),
         ],
         value="",
     )
 
-    start_date = None
-    end_date = None
-    start_btn = ft.OutlinedButton(
-        "开始日期", icon=ft.Icons.CALENDAR_TODAY,
-        on_click=lambda e: page.open(dp_start),
+    start_f = ft.TextField(
+        label="开始日期", hint_text="YYYY-MM-DD，留空不限",
+        height=INPUT_HEIGHT, border_radius=10,
     )
-    end_btn = ft.OutlinedButton(
-        "结束日期", icon=ft.Icons.CALENDAR_TODAY,
-        on_click=lambda e: page.open(dp_end),
-    )
-    dp_start = ft.DatePicker(
-        first_date=date(2020, 1, 1), last_date=date.today(),
-        on_change=lambda e: set_date(e, "start"),
-    )
-    dp_end = ft.DatePicker(
-        first_date=date(2020, 1, 1), last_date=date.today(),
-        on_change=lambda e: set_date(e, "end"),
+    end_f = ft.TextField(
+        label="结束日期", hint_text="YYYY-MM-DD，留空不限",
+        height=INPUT_HEIGHT, border_radius=10,
     )
 
     list_col = ft.Column(spacing=8, scroll=ft.ScrollMode.AUTO, expand=True)
 
-    def set_date(e, which):
-        nonlocal start_date, end_date
-        d = e.control.value
-        if which == "start":
-            start_date = d
-            start_btn.text = f"开始 {d}"
-        else:
-            end_date = d
-            end_btn.text = f"结束 {d}"
-        page.update()
+    def _parse_date(text_value, field_name):
+        """把文本框内容解析为 date；空值返回 None，格式错误返回提示信息。"""
+        s = (text_value or "").strip()
+        if not s:
+            return None, None
+        try:
+            return date.fromisoformat(s), None
+        except ValueError:
+            return None, f"{field_name}格式应为 YYYY-MM-DD（当前：{s}）"
 
     def query(e=None):
+        start_date, err1 = _parse_date(start_f.value, "开始日期")
+        if err1:
+            app.snack(err1, OUT_COLOR)
+            return
+        end_date, err2 = _parse_date(end_f.value, "结束日期")
+        if err2:
+            app.snack(err2, OUT_COLOR)
+            return
+
         rows = []
         for t in db.list_transactions(
             code=code_f.value.strip(), start=start_date, end=end_date,
@@ -94,7 +99,8 @@ def records_view(app):
         [
             code_f,
             type_dd,
-            ft.Row([start_btn, end_btn], spacing=10, expand=True),
+            start_f,
+            end_f,
             query_btn,
             list_col,
         ],

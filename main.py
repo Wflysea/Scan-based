@@ -59,12 +59,13 @@ class App:
         self.select(self.current)
 
     def snack(self, message, color=None):
-        self.page.snack_bar = ft.SnackBar(
-            content=ft.Text(message, color=ft.Colors.WHITE),
-            bgcolor=color or PRIMARY,
+        # Flet 1.0：SnackBar 通过 page.show_dialog 显示（不再用 page.snack_bar + open）
+        self.page.show_dialog(
+            ft.SnackBar(
+                content=ft.Text(message, color=ft.Colors.WHITE),
+                bgcolor=color or PRIMARY,
+            )
         )
-        self.page.snack_bar.open = True
-        self.page.update()
 
 
 def main(page: ft.Page):
@@ -73,4 +74,5 @@ def main(page: ft.Page):
 
 
 if __name__ == "__main__":
-    ft.app(target=main)
+    # Flet 1.0：ft.app(target=...) 已移除，改为 ft.run(main)
+    ft.run(main)
