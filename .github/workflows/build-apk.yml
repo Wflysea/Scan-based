@@ -88,7 +88,7 @@ jobs:
         run: flet build apk --yes --arch arm64-v8a --exclude tests README.md PYCHARM.md --verbose
 
       # 7b) 回退：若 --arch 参数在当前 flet 版本不被支持，退化为默认（通用）APK，保证一定有产物
-      - name: Build APK (fallback: universal)
+      - name: "Build APK (fallback: universal)"
         if: steps.build_apk.outcome == 'failure'
         run: flet build apk --yes --exclude tests README.md PYCHARM.md --verbose
 
