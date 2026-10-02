@@ -77,9 +77,20 @@ jobs:
           pip install -r requirements-android.txt
 
       # 7) 构建 APK（分支推送 / PR / 手动 / tag 均执行）
-      #    --yes：自动确认“Flutter 将自动下载安装”的交互提示（CI 无 TTY，否则 EOFError 崩溃）
-      - name: Build APK
-        run: flet build apk --yes --verbose
+      #    --yes   ：自动确认“Flutter 将自动下载安装”的交互提示（CI 无 TTY，否则 EOFError 崩溃）
+      #    --arch  ：只打 arm64-v8a 单架构 APK，体积可从 ~68MB 降到 ~30MB
+      #              （通用 APK 会把 3 套 ABI 的 Python/Flutter 原生库都打进去）
+      #    --exclude：把测试与文档排除出 App 包体
+      #    若你的手机是 32 位老机型，改用 --split-per-abi（产出 3 个单架构 APK 自行选择）。
+      - name: Build APK (arm64 only)
+        id: build_apk
+        continue-on-error: true
+        run: flet build apk --yes --arch arm64-v8a --exclude tests README.md PYCHARM.md --verbose
+
+      # 7b) 回退：若 --arch 参数在当前 flet 版本不被支持，退化为默认（通用）APK，保证一定有产物
+      - name: Build APK (fallback: universal)
+        if: steps.build_apk.outcome == 'failure'
+        run: flet build apk --yes --exclude tests README.md PYCHARM.md --verbose
 
       # 8) 构建 AAB（仅在发布 Release 或打 tag 时）
       - name: Build AAB

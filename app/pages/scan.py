@@ -42,7 +42,7 @@ class ScanView(ft.Column):
         self.manual = ft.TextField(label="手动输入编码", height=INPUT_HEIGHT, border_radius=10)
         self.scan_slot = ft.Container(
             height=360, border_radius=14, clip_behavior=ft.ClipBehavior.ANTI_ALIAS,
-            bgcolor="#000000", alignment=ft.alignment.center,
+            bgcolor="#000000", alignment=ft.Alignment.CENTER,
             content=ft.ProgressRing(),
         )
         self.shoot_btn = ft.FilledButton(
@@ -86,7 +86,7 @@ class ScanView(ft.Column):
                 self.native = BarcodeScanner(on_scan=self.on_native_scan)
                 self.scan_slot.content = self.native
                 self.status.value = "将条码 / 二维码对准取景框"
-                await page.update_async()
+                page.update()
                 return
             except Exception as e:  # noqa: BLE001
                 self.status.value = f"原生扫码不可用，退化为相机：{e}"
@@ -98,15 +98,22 @@ class ScanView(ft.Column):
         import flet_camera as fc
         self.camera = fc.Camera(preview_enabled=True, on_stream_image=self.on_frame)
         self.scan_slot.content = self.camera
-        await page.update_async()
+        page.update()
 
         # 申请相机权限（best-effort）
+        # Flet 1.0 的 flet-permission-handler：
+        #   - 枚举名是 Permission（不是旧版的 PermissionType）
+        #   - 查询用 get_status（不是 check），申请用 request
+        #   - PermissionHandler 是 Service，必须挂到 page.services 才会生效
         try:
-            from flet_permission_handler import PermissionHandler, PermissionType
+            from flet_permission_handler import Permission, PermissionHandler, PermissionStatus
+
             ph = PermissionHandler()
-            st = await ph.check(PermissionType.CAMERA)
-            if not st or getattr(st, "value", None) != "granted":
-                await ph.request(PermissionType.CAMERA)
+            if ph not in page.services:
+                page.services.append(ph)
+            st = await ph.get_status(Permission.CAMERA)
+            if st != PermissionStatus.GRANTED:
+                await ph.request(Permission.CAMERA)
         except Exception:  # noqa: BLE001
             pass
 
@@ -114,7 +121,7 @@ class ScanView(ft.Column):
             cams = await self.camera.get_available_cameras()
             if not cams:
                 self.status.value = "未检测到相机（桌面正常，扫码请用手动输入）"
-                await page.update_async()
+                page.update()
                 return
             back = next(
                 (c for c in cams if c.lens_direction == fc.CameraLensDirection.BACK),
@@ -131,7 +138,7 @@ class ScanView(ft.Column):
             self.status.value = "将条码 / 二维码对准取景框（或点拍照识别）"
         except Exception as e:  # noqa: BLE001
             self.status.value = f"相机初始化失败：{e}\n请确认已授予相机权限"
-        await page.update_async()
+        page.update()
 
     async def _teardown(self):
         try:
@@ -173,10 +180,10 @@ class ScanView(ft.Column):
                 open_operation(self.app, code=codes[0], default_type="IN")
             else:
                 self.status.value = "未识别到条码，请重试或手动输入"
-                await self.app.page.update_async()
+                self.app.page.update()
         except Exception as ex:  # noqa: BLE001
             self.status.value = f"拍照失败：{ex}"
-            await self.app.page.update_async()
+            self.app.page.update()
 
     def on_manual(self, e):
         code = self.manual.value.strip()

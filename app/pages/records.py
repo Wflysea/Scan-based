@@ -84,7 +84,7 @@ def records_view(app):
             rows.append(
                 ft.Container(
                     ft.Text("暂无记录", color=SUBTEXT),
-                    alignment=ft.alignment.center, padding=30,
+                    alignment=ft.Alignment.CENTER, padding=30,
                 )
             )
         list_col.controls = rows

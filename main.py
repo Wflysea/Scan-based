@@ -20,10 +20,11 @@ class App:
             on_change=self.on_nav,
             bgcolor=ft.Colors.WHITE,
             destinations=[
-                ft.NavigationDestination(icon=ft.Icons.HOME_OUTLINED, selected_icon=ft.Icons.HOME, label="首页"),
-                ft.NavigationDestination(icon=ft.Icons.QR_CODE_2, selected_icon=ft.Icons.QR_CODE_2, label="扫码"),
-                ft.NavigationDestination(icon=ft.Icons.INVENTORY_2_OUTLINED, selected_icon=ft.Icons.INVENTORY_2, label="库存"),
-                ft.NavigationDestination(icon=ft.Icons.HISTORY_OUTLINED, selected_icon=ft.Icons.HISTORY, label="流水"),
+                # Flet 1.0：0.x 的 ft.NavigationDestination 已更名为 ft.NavigationBarDestination
+                ft.NavigationBarDestination(icon=ft.Icons.HOME_OUTLINED, selected_icon=ft.Icons.HOME, label="首页"),
+                ft.NavigationBarDestination(icon=ft.Icons.QR_CODE_2, selected_icon=ft.Icons.QR_CODE_2, label="扫码"),
+                ft.NavigationBarDestination(icon=ft.Icons.INVENTORY_2_OUTLINED, selected_icon=ft.Icons.INVENTORY_2, label="库存"),
+                ft.NavigationBarDestination(icon=ft.Icons.HISTORY_OUTLINED, selected_icon=ft.Icons.HISTORY, label="流水"),
             ],
         )
 

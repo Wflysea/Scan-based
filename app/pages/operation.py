@@ -87,7 +87,7 @@ def open_operation(app, code=None, default_type="IN"):
 
     sheet = ft.BottomSheet(
         content=ft.Container(
-            padding=ft.padding.all(20),
+            padding=ft.Padding.all(20),
             content=ft.Column(
                 [
                     ft.Text("出入库登记", size=20, weight=ft.FontWeight.BOLD, color=TEXT),

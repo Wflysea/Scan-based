@@ -13,7 +13,7 @@ def _stat_card(label, value, color):
         padding=14,
         border_radius=12,
         bgcolor=CARD,
-        border=ft.border.all(1, BORDER),
+        border=ft.Border.all(1, BORDER),
         content=ft.Column(
             [
                 ft.Text(label, size=13, color=SUBTEXT),
@@ -42,7 +42,7 @@ def home_view(app):
             padding=14,
             border_radius=12,
             bgcolor="#FFF3E0",
-            border=ft.border.all(1, "#FFCC80"),
+            border=ft.Border.all(1, "#FFCC80"),
             content=ft.Column(
                 [
                     ft.Row(
@@ -62,7 +62,7 @@ def home_view(app):
             padding=12,
             border_radius=12,
             bgcolor="#E8F5E9",
-            border=ft.border.all(1, "#A5D6A7"),
+            border=ft.Border.all(1, "#A5D6A7"),
         )
 
     quick = ft.Row(

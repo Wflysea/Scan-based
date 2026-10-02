@@ -11,8 +11,9 @@ dependencies = [
     "flet-camera==1.0.3",
     "flet-permission-handler==1.0.3",
     # pyzbar 在安卓无可用 wheel（依赖系统 libzbar，PyPI 最高仅 0.1.9），不能放进打包依赖；
-    # 安卓扫码走原生 mobile_scanner 或手动输入，桌面端 pyzbar 仍由 requirements.txt 安装。
-    "Pillow>=10.0.0",
+    # 桌面端 pyzbar 仍由 requirements.txt 安装。
+    # Pillow 同理：它只被 pyzbar 的解码路径使用（scan.py 内懒加载），安卓端用不到，
+    # 从打包依赖移除可显著减小 APK 体积。
     "openpyxl>=3.1.0",
 ]
 

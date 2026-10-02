@@ -69,6 +69,22 @@ python main.py
 > 注：桌面端 `flet-camera` 无相机、`mobile_scanner` 未接入，扫码页会提示“未检测到相机”，
 > 用「手动输入」即可正常调试入库/出库/库存/流水/导出等全部逻辑。
 
+### 开发期自检（强烈建议在打包前跑）
+
+Flet 1.0 是破坏性升级，很多 API 被改名/移除；这类问题**构建时不会报错，只有手机上运行才崩**。
+仓库内置了两个自检脚本，可在打包前提前发现：
+
+```bash
+# 1) 静态 API 校验：ft.X 名称 / 构造参数 / page.* 成员
+python tests/check_flet_api.py
+
+# 2) 冒烟构建：在真实 ft.Page 上构建全部页面 + 出入库弹窗 + xlsx 导出
+python tests/smoke_build_views.py
+```
+
+两个脚本都需要装了 `flet==1.0.3` 的解释器（见 `requirements.txt`）。
+在 CI 里也可以把它们加进 workflow 的 build 步骤之前，避免“构建成功但一打开就崩”。
+
 ## 安卓相机权限配置
 
 权限在 `pyproject.toml` 中声明，打包时自动注入 `AndroidManifest.xml`：
